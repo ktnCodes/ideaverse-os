@@ -10,9 +10,11 @@ Bootstrap an LLM-ready Obsidian vault with structured routing, identity dossier,
 **The problem:** Every new Obsidian vault starts as an empty folder. You spend hours configuring themes, installing plugins, creating folder structures, and figuring out how to make AI tools understand your vault. Then you do it again on your next machine.
 
 **The solution:** A single command (or Claude skill) that scaffolds a complete vault with:
-- ICM routing files (`_index.md`, `CONTEXT.md`) so any LLM can navigate your vault instantly
+- 12 ecosystem sections based on [Kanika's Obsidian Claude Ecosystem](https://x.com/KanikaBK/status/2043698988613050447) taxonomy
+- ICM routing files (`_index.md`) so any LLM can navigate your vault instantly
 - A canonical identity file (`me.md`) that tells AI tools who you are, how you think, and how to work with you
-- A curated theme + font stack that's readable and visually distinct
+- Nick Milo's Ideaverse concepts: Maps of Content, evergreen notes, literature notes
+- A curated theme + font stack (AnuPpuccin + Comfortaa + DM Serif Display)
 - 11 community plugins pre-configured for knowledge management
 - A daily note workflow organized by date folders
 
@@ -34,6 +36,8 @@ ideaverse-setup ~/Documents/MyIdeaverse/Vault --user "Your Name" --no-fonts
 ```
 
 Then fill in `_ai-OS/me.md` using the [interview guide](docs/interview-guide.md).
+
+The vault structure is based on [Kanika's Obsidian Claude Ecosystem](https://x.com/KanikaBK/status/2043698988613050447), enhanced with [ICM routing](https://github.com/ktncodes/icm-template) and [Nick Milo's Ideaverse](https://www.linkingyourthinking.com/) concepts.
 
 ### Path 2: Claude Code Skill (AI-assisted)
 
@@ -57,47 +61,92 @@ The skill walks you through everything interactively, including a 3-round identi
 
 ```
 YourVault/
-├── _index.md                 # LLM routing -- vault homepage
-├── _ai-OS/
-│   └── me.md                 # Identity dossier (who you are, how to work with you)
-├── _work/                    # Professional domain
-│   ├── CONTEXT.md
-│   ├── bugs/
-│   ├── features/
-│   ├── product/
-│   └── reference/
-├── _personal/                # Growth domain
-│   ├── CONTEXT.md
-│   ├── career/
-│   ├── learning/
-│   └── portfolio/
-├── wiki/                     # LLM-compiled knowledge base
+├── _index.md                         # LLM routing -- vault homepage
+├── _ai-OS/                           # Claude integration + identity
 │   ├── _index.md
-│   ├── ai/
-│   ├── career/
-│   ├── portfolio/
-│   └── tools/
-├── raw/                      # Ingestion queue
+│   ├── me.md                         # Identity dossier (who you are, how to work with you)
+│   ├── Commands/                     # Custom slash commands
+│   ├── Context Loading Strategies/
+│   ├── MCP Tools and Skills/
+│   └── Session Memory/               # Structured logs across conversations
+├── Vault Foundation/                 # Structure, MOCs, templates, metadata
 │   ├── _index.md
-│   ├── web-clips/
-│   ├── youtube/
-│   └── papers/
-├── daily/                    # Date-folder daily notes
-│   └── _index.md
-├── skills/                   # Claude skill vault backups
-│   └── _index.md
-├── methodology/
-├── prompt-library/
-├── templates/
-│   └── daily-note-template.md
-├── resources/
-├── visualization/
-├── Excalidraw/
+│   ├── Folder Structure/
+│   ├── MOCs and Hub Notes/           # Maps of Content (Nick Milo pattern)
+│   ├── Templates System/
+│   ├── Metadata and Dataview/
+│   └── Attachment Management/
+├── Knowledge Workflows/              # Capture > Process > Connect pipeline
+│   ├── _index.md
+│   ├── Capture Process Connect/
+│   ├── Literature Notes/             # One note per source
+│   ├── Evergreen Notes/              # Atomic, linked concept notes
+│   ├── Project Management/
+│   └── Research and Synthesis/
+├── Prompt Library/                   # Reusable prompts by purpose
+│   ├── _index.md
+│   ├── Thinking Tools/               # /trace, /challenge, /steelman
+│   ├── Note Processing/
+│   ├── Idea Generation/
+│   ├── Reflection and Synthesis/
+│   └── Custom Slash Commands/
+├── Daily Systems/                    # Periodic notes and tracking
+│   ├── _index.md
+│   ├── Daily Notes/                  # Date-folder pattern (YYYY-MM-DD/)
+│   ├── Weekly Reviews/
+│   ├── Monthly Reviews/
+│   ├── Task Management/
+│   ├── Journaling/
+│   └── Habit Tracking/
+├── Automation/                       # Claude skills + maintenance scripts
+│   ├── _index.md
+│   ├── Custom Claude Skills/
+│   ├── Auto-Tagging and Linking/
+│   ├── Summary Generation/
+│   ├── Daily Review Automation/
+│   └── Vault Maintenance Scripts/
+├── Core Plugins/                     # Plugin documentation and config
+│   ├── Terminal and Claude Code/
+│   ├── Dataview and Queries/
+│   ├── Templater and QuickAdd/
+│   ├── Periodic Notes/
+│   ├── Advanced URI and Canvas/
+│   └── Graph View Enhancers/
+├── Advanced Techniques/              # Agentic and multi-step patterns
+│   ├── _index.md
+│   ├── Agentic Note-Taking/
+│   ├── Multi-Step Reasoning/
+│   ├── Cross-Note Analysis/
+│   ├── Custom AI Agents/
+│   └── Vault-as-Context Engineering/
+├── Visualization/                    # Maps, graphs, dashboards
+│   ├── Graph View/
+│   ├── Canvas Workspaces/
+│   ├── Knowledge Maps/
+│   ├── Progress Dashboards/
+│   └── Excalidraw/
+├── Maintenance/                      # Vault health and optimization
+│   ├── _index.md
+│   ├── Vault Health Checks/
+│   ├── Dead Link Cleanup/
+│   ├── Performance Tuning/
+│   ├── Backup and Git Sync/
+│   └── Claude Context Optimization/
+├── Community and Resources/          # Curated recommendations
+│   ├── Plugin Recommendations/
+│   ├── Best Practices/
+│   ├── Shared Vault Templates/
+│   └── Learning Resources/
+├── Evolution and Scaling/            # Growing the system
+│   ├── New Skill Development/
+│   ├── Multi-Vault Management/
+│   ├── Team Collaboration/
+│   └── Long-term Knowledge Evolution/
 └── .obsidian/
-    ├── appearance.json       # AnuPpuccin + font config
+    ├── appearance.json               # AnuPpuccin + font config
     ├── community-plugins.json
     └── snippets/
-        └── heading-font.css  # DM Serif Display headings
+        └── heading-font.css          # DM Serif Display headings
 ```
 
 ## The Identity File (me.md)
