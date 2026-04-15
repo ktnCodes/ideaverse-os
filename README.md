@@ -2,6 +2,11 @@
 
 Bootstrap an LLM-ready Obsidian vault with structured routing, identity dossier, and daily workflow -- in 10 minutes.
 
+<!-- Screenshots: vault homepage, me.md identity file, folder structure -->
+<p align="center">
+  <img src="docs/images/vault-homepage.png" alt="Vault homepage with routing and heatmap" width="700">
+</p>
+
 **The problem:** Every new Obsidian vault starts as an empty folder. You spend hours configuring themes, installing plugins, creating folder structures, and figuring out how to make AI tools understand your vault. Then you do it again on your next machine.
 
 **The solution:** A single command (or Claude skill) that scaffolds a complete vault with:
@@ -45,6 +50,10 @@ Then in any Claude Code session:
 The skill walks you through everything interactively, including a 3-round identity interview that compiles your answers into me.md automatically.
 
 ## What You Get
+
+<p align="center">
+  <img src="docs/images/folder-structure.png" alt="Vault folder structure in Obsidian file explorer" width="300">
+</p>
 
 ```
 YourVault/
@@ -95,6 +104,10 @@ YourVault/
 
 The most important file in the vault. It answers three questions for every AI tool:
 
+<p align="center">
+  <img src="docs/images/me-md.png" alt="me.md identity file in Obsidian" width="700">
+</p>
+
 1. **Who are you?** -- Summary statement, first principles, values, identity
 2. **How do you think?** -- Thinking style, problem-solving process, intellectual influences
 3. **How should I work with you?** -- Communication preferences, vibe, rules, conventions
@@ -104,6 +117,10 @@ The CLI creates a skeleton. The Claude skill runs a live interview and compiles 
 See [docs/interview-guide.md](docs/interview-guide.md) for the full question set.
 
 ## Theme & Font Stack
+
+<p align="center">
+  <img src="docs/images/font-stack.png" alt="AnuPpuccin theme with DM Serif Display headings and domain routing" width="700">
+</p>
 
 | Role | Font | Why |
 |------|------|-----|
