@@ -1,0 +1,18 @@
+[project]
+name = "ideaverse-setup"
+version = "0.1.0"
+description = "Bootstrap an LLM-ready Obsidian vault with structured routing, identity dossier, and daily workflow."
+authors = [{ name = "Kevin Nguyen", email = "kevin@ktncodes.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.28",
+]
+
+[project.scripts]
+ideaverse-setup = "cli.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"

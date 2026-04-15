@@ -1,0 +1,26 @@
+/* DM Serif Display headings - override theme */
+
+/* Reading view */
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 {
+  font-family: "DM Serif Display", serif !important;
+}
+
+/* Editing view (live preview) */
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-family: "DM Serif Display", serif !important;
+}
+
+/* Inline title (note name at top) */
+.inline-title {
+  font-family: "DM Serif Display", serif !important;
+}
