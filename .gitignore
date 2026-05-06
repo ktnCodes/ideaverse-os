@@ -30,3 +30,8 @@ Thumbs.db
 # Test
 coverage/
 .nyc_output/
+
+# Python build artifacts (in _archived/cli-python/)
+__pycache__/
+*.pyc
+*.pyo
