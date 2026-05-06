@@ -1,0 +1,57 @@
+{
+  "name": "ideaverse-os",
+  "version": "0.0.1",
+  "description": "Bootstrap a position-addressed, LLM-agnostic knowledge vault from a template. Karpathy's wiki pattern with conversational ingestion baked in.",
+  "type": "module",
+  "bin": {
+    "ideaverse-os": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "files": [
+    "dist",
+    "templates",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "test": "node --test src/**/*.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ideaverse",
+    "obsidian",
+    "knowledge-base",
+    "second-brain",
+    "agentic",
+    "llm",
+    "claude",
+    "karpathy",
+    "position-addressed",
+    "vault-template"
+  ],
+  "author": "Kevin Nguyen <kevin@ktncodes.com>",
+  "license": "MIT",
+  "homepage": "https://ideaverse-os.ktncodes.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktnCodes/ideaverse-os.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ktnCodes/ideaverse-os/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

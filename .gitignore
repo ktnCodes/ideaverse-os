@@ -1,8 +1,32 @@
-__pycache__/
-*.pyc
-*.pyo
+# Node
+node_modules/
 dist/
-build/
-*.egg-info/
-.venv/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+
+# Env / secrets
 .env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Build artifacts
+*.tgz
+.next/
+.cache/
+
+# Test
+coverage/
+.nyc_output/

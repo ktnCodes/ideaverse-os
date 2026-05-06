@@ -1,224 +1,51 @@
-# Ideaverse Setup
+# ideaverse-os
 
-Bootstrap an LLM-ready Obsidian vault with structured routing, identity dossier, and daily workflow -- in 10 minutes.
+> Your knowledge base, written by conversation.
 
-<!-- Screenshots: vault homepage, me.md identity file, folder structure -->
-<p align="center">
-  <img src="docs/images/vault-homepage.png" alt="Vault homepage with routing and heatmap" width="700">
-</p>
-
-**The problem:** Every new Obsidian vault starts as an empty folder. You spend hours configuring themes, installing plugins, creating folder structures, and figuring out how to make AI tools understand your vault. Then you do it again on your next machine.
-
-**The solution:** A single command (or Claude skill) that scaffolds a complete vault with:
-- 12 ecosystem sections based on [Kanika's Obsidian Claude Ecosystem](https://x.com/KanikaBK/status/2043698988613050447) taxonomy
-- ICM routing files (`_index.md`) so any LLM can navigate your vault instantly
-- A canonical identity file (`me.md`) that tells AI tools who you are, how you think, and how to work with you
-- Nick Milo's Ideaverse concepts: Maps of Content, evergreen notes, literature notes
-- A curated theme + font stack (AnuPpuccin + Comfortaa + DM Serif Display)
-- 11 community plugins pre-configured for knowledge management
-- A daily note workflow organized by date folders
-
-## Two Paths
-
-### Path 1: Python CLI (no AI required)
+Bootstrap a position-addressed, LLM-agnostic knowledge vault in one command.
 
 ```bash
-# Clone and install
-git clone https://github.com/ktncodes/ideaverse-setup.git
-cd ideaverse-setup
-pip install -e .
-
-# Scaffold a vault
-ideaverse-setup ~/Documents/MyIdeaverse/Vault --user "Your Name"
-
-# Without font installation
-ideaverse-setup ~/Documents/MyIdeaverse/Vault --user "Your Name" --no-fonts
+npx ideaverse-os init ~/my-vault
 ```
 
-Then fill in `_ai-OS/me.md` using the [interview guide](docs/interview-guide.md).
+**Status:** v0.x (early development). Tracer slice in flight; v1.0 launch coming.
 
-The vault structure is based on [Kanika's Obsidian Claude Ecosystem](https://x.com/KanikaBK/status/2043698988613050447), enhanced with [ICM routing](https://github.com/ktncodes/icm-template) and [Nick Milo's Ideaverse](https://www.linkingyourthinking.com/) concepts.
+**Site:** [ideaverse-os.ktncodes.com](https://ideaverse-os.ktncodes.com) (live by Task 1)
 
-### Path 2: Claude Code Skill (AI-assisted)
+---
+
+## What it does
+
+- **Init** scaffolds a position-addressed vault skeleton (numbered prefixes per Jake Chief / Nick Milo / Karpathy raw->wiki principles), drops a 6-file `auto_inject: true` harness layer, and writes router files for every major LLM harness (`CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `.cursorrules`, `AIDER_CONVENTIONS.md`).
+- **Build** runs an LLM-driven 5-phase interview from inside any harness (Claude Code, Cursor, Aider, Codex, Gemini CLI). Compiles your purpose / identity / workflow / domain split into the lean files. Pick from 6 starter templates or go Custom.
+- **Capture** is the differentiator. Paste a YouTube link, save a page via Obsidian Web Clipper, or just say "I learned X today" — `ideaverse-capture` routes to the right handler, refreshes your cortex articles, and cross-links automatically.
+
+## Why
+
+Existing knowledge bases force a tradeoff:
+
+| System | What's missing |
+|---|---|
+| Karpathy raw->wiki | No template; you build it manually |
+| AI Impact infinite_brain | 16 node types + 10 edge types; over-engineered |
+| Tiago Forte PARA | Designed for human re-reading, not agent retrieval |
+| Cole Medin AI second brain | Static identity; no ingestion model; Claude-only |
+| Nick Milo Ideaverse-OS | Vault template only; no LLM build flow |
+
+ideaverse-os ships the position-addressed architecture as a one-command bootstrap, then lets the LLM curate it as you converse.
+
+## Install
 
 ```bash
-# Copy the skill to your Claude skills directory
-cp -r SKILLS/ideaverse-setup ~/.claude/skills/ideaverse-setup
+npx ideaverse-os@latest init <path>
 ```
 
-Then in any Claude Code session:
-```
-/ideaverse-setup ~/Documents/MyIdeaverse/Vault
-```
+Requires Node 20+ and an LLM CLI of your choice.
 
-The skill walks you through everything interactively, including a 3-round identity interview that compiles your answers into me.md automatically.
+## Status
 
-## What You Get
-
-<p align="center">
-  <img src="docs/images/folder-structure.png" alt="Vault folder structure in Obsidian file explorer" width="300">
-</p>
-
-```
-YourVault/
-├── _index.md                         # LLM routing -- vault homepage
-├── _ai-OS/                           # Claude integration + identity
-│   ├── _index.md
-│   ├── me.md                         # Identity dossier (who you are, how to work with you)
-│   ├── Commands/                     # Custom slash commands
-│   ├── Context Loading Strategies/
-│   ├── MCP Tools and Skills/
-│   └── Session Memory/               # Structured logs across conversations
-├── Vault Foundation/                 # Structure, MOCs, templates, metadata
-│   ├── _index.md
-│   ├── Folder Structure/
-│   ├── MOCs and Hub Notes/           # Maps of Content (Nick Milo pattern)
-│   ├── Templates System/
-│   ├── Metadata and Dataview/
-│   └── Attachment Management/
-├── Knowledge Workflows/              # Capture > Process > Connect pipeline
-│   ├── _index.md
-│   ├── Capture Process Connect/
-│   ├── Literature Notes/             # One note per source
-│   ├── Evergreen Notes/              # Atomic, linked concept notes
-│   ├── Project Management/
-│   └── Research and Synthesis/
-├── Prompt Library/                   # Reusable prompts by purpose
-│   ├── _index.md
-│   ├── Thinking Tools/               # /trace, /challenge, /steelman
-│   ├── Note Processing/
-│   ├── Idea Generation/
-│   ├── Reflection and Synthesis/
-│   └── Custom Slash Commands/
-├── Daily Systems/                    # Periodic notes and tracking
-│   ├── _index.md
-│   ├── Daily Notes/                  # Date-folder pattern (YYYY-MM-DD/)
-│   ├── Weekly Reviews/
-│   ├── Monthly Reviews/
-│   ├── Task Management/
-│   ├── Journaling/
-│   └── Habit Tracking/
-├── Automation/                       # Claude skills + maintenance scripts
-│   ├── _index.md
-│   ├── Custom Claude Skills/
-│   ├── Auto-Tagging and Linking/
-│   ├── Summary Generation/
-│   ├── Daily Review Automation/
-│   └── Vault Maintenance Scripts/
-├── Core Plugins/                     # Plugin documentation and config
-│   ├── Terminal and Claude Code/
-│   ├── Dataview and Queries/
-│   ├── Templater and QuickAdd/
-│   ├── Periodic Notes/
-│   ├── Advanced URI and Canvas/
-│   └── Graph View Enhancers/
-├── Advanced Techniques/              # Agentic and multi-step patterns
-│   ├── _index.md
-│   ├── Agentic Note-Taking/
-│   ├── Multi-Step Reasoning/
-│   ├── Cross-Note Analysis/
-│   ├── Custom AI Agents/
-│   └── Vault-as-Context Engineering/
-├── Visualization/                    # Maps, graphs, dashboards
-│   ├── Graph View/
-│   ├── Canvas Workspaces/
-│   ├── Knowledge Maps/
-│   ├── Progress Dashboards/
-│   └── Excalidraw/
-├── Maintenance/                      # Vault health and optimization
-│   ├── _index.md
-│   ├── Vault Health Checks/
-│   ├── Dead Link Cleanup/
-│   ├── Performance Tuning/
-│   ├── Backup and Git Sync/
-│   └── Claude Context Optimization/
-├── Community and Resources/          # Curated recommendations
-│   ├── Plugin Recommendations/
-│   ├── Best Practices/
-│   ├── Shared Vault Templates/
-│   └── Learning Resources/
-├── Evolution and Scaling/            # Growing the system
-│   ├── New Skill Development/
-│   ├── Multi-Vault Management/
-│   ├── Team Collaboration/
-│   └── Long-term Knowledge Evolution/
-└── .obsidian/
-    ├── appearance.json               # AnuPpuccin + font config
-    ├── community-plugins.json
-    └── snippets/
-        └── heading-font.css          # DM Serif Display headings
-```
-
-## The Identity File (me.md)
-
-The most important file in the vault. It answers three questions for every AI tool:
-
-<p align="center">
-  <img src="docs/images/me-md.png" alt="me.md identity file in Obsidian" width="700">
-</p>
-
-1. **Who are you?** -- Summary statement, first principles, values, identity
-2. **How do you think?** -- Thinking style, problem-solving process, intellectual influences
-3. **How should I work with you?** -- Communication preferences, vibe, rules, conventions
-
-The CLI creates a skeleton. The Claude skill runs a live interview and compiles your answers. Either way, the result is a single file that any AI tool can read to personalize its behavior.
-
-See [docs/interview-guide.md](docs/interview-guide.md) for the full question set.
-
-## Theme & Font Stack
-
-<p align="center">
-  <img src="docs/images/font-stack.png" alt="AnuPpuccin theme with DM Serif Display headings and domain routing" width="700">
-</p>
-
-| Role | Font | Why |
-|------|------|-----|
-| Body text | Comfortaa | Rounded geometric sans-serif. Clean, readable for long notes |
-| Interface | iA Writer Quattro S | Proportional monospace hybrid. Compact sidebar, readable tabs |
-| Headings | DM Serif Display | High-contrast serif. Clear visual hierarchy |
-| Theme | AnuPpuccin (Moonstone) | Highly configurable Obsidian theme with light base |
-
-See [docs/font-guide.md](docs/font-guide.md) for alternatives and troubleshooting.
-
-## Community Plugins
-
-| Plugin | Purpose |
-|--------|---------|
-| Dataview | Query vault data, power homepage heatmap |
-| Calendar | Navigate daily notes by date |
-| Heatmap Calendar | GitHub-style activity visualization |
-| Homepage | Set `_index.md` as vault landing page |
-| Style Settings | Fine-tune AnuPpuccin theme |
-| Obsidian Git | Auto-backup to Git |
-| QuickAdd | Macro commands for note creation |
-| Excalidraw | Whiteboard diagrams |
-| Iconic | Custom folder/file icons |
-| Meta Bind | Interactive YAML inputs |
-| Pexels Banner | Header images from Pexels |
-
-See [docs/plugin-guide.md](docs/plugin-guide.md) for configuration tips.
-
-## The Routing Pattern (ICM)
-
-Every folder that an LLM might navigate has an `_index.md` or `CONTEXT.md` file that answers:
-- What is this folder?
-- What's in it?
-- Where should I go next?
-
-This is the [Interpretable Context Methodology](https://github.com/ktncodes/icm-template) -- a plain-text routing pattern that gives any LLM instant spatial awareness without vector databases or embeddings. The vault loads in ~2,000 tokens instead of requiring full-vault indexing.
-
-## Requirements
-
-- Python 3.10+
-- Obsidian (for using the vault)
-- Internet connection (for font download)
-- Admin rights (for system font installation on Windows)
+See [PRD](./docs/PRD.md) and [TASKS](./docs/TASKS.md). Currently shipping vertical slice 1 of 7.
 
 ## License
 
-MIT -- see [LICENSE](LICENSE).
-
-## Related Projects
-
-- [ICM Template](https://github.com/ktncodes/icm-template) -- The routing methodology this vault uses
-- [Pipeline Template](https://github.com/ktncodes/pipeline-template) -- 4-phase dev workflow (/plan /scope /build /qa)
+MIT (c) 2026 Kevin Nguyen

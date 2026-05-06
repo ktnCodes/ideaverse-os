@@ -1,55 +1,51 @@
-# Ideaverse Setup — Identity
+# Ideaverse-OS - Project Identity
 
-## Purpose
+## Status: ACTIVE (Task 0 - foundation complete; Task 1 tracer slice in flight)
 
-A toolkit for bootstrapping an LLM-ready Obsidian vault with structured routing, identity dossier, curated theme/fonts, and daily note workflow. Ships as both a Claude Code skill (AI-assisted) and a standalone Python CLI (manual).
+Bootstraps a position-addressed, LLM-agnostic knowledge vault from a one-line `npx` command. Karpathy's wiki pattern with conversational ingestion baked in. Ships as an npm package + thin Claude skill wrapper + marketing site.
+
+**Source of truth for the design:**
+- PRD: `MyIdeaverse/Ideaverse/50-research-library/Spikes/SPIKE_ideaverse_OS_skill_rewrite.md`
+- Tasks: `MyIdeaverse/Ideaverse/50-research-library/Spikes/SPIKE_ideaverse_OS_skill_rewrite_TASKS.md`
+- Kickoff (historical): `MyIdeaverse/Ideaverse/50-research-library/Idea Generation/2026-05-06 Ideaverse-OS-Skill Rewrite Kickoff.md`
+
+**Reference architecture:** `MyIdeaverse/Ideaverse/60-skills/_shared/impeccable/` (lean SKILL.md + reference/ docs + scripts/ + agents/)
 
 ---
+
+## Stack
+
+- **CLI:** Node 20+ + TypeScript + Commander.js, built with `tsc`, runs via `npx ideaverse-os init`
+- **Skills bundle (vault-resident):** harness-agnostic markdown + Node `.mjs` scripts (impeccable pattern). Bundle includes `ideaverse-os` (build interview + capture router), `cortex-compile`, `cortex-lint`, `cortex-connect`, `web-clip-report`, `yt-light-research`.
+- **Site:** `ideaverse-os.ktncodes.com` lives in `portfolio-site/ktncodes-v2/` (Next.js 15 + React 19 + Tailwind v4 + MDX + Motion). Subdomain rewrite to the existing app.
+- **Distribution:** npm `ideaverse-os` (unscoped) + GitHub `ktnCodes/ideaverse-os` + Claude skill wrapper that shells out to the CLI.
 
 ## Folder Map
 
 ```
-ideaverse-setup/
-├── SKILLS/
-│   └── ideaverse-setup/
-│       └── SKILL.md              # Claude Code skill — full interactive setup
-├── cli/
-│   ├── __init__.py
-│   ├── __main__.py               # Entry point: python -m cli
-│   ├── scaffold.py               # Folder + file creation logic
-│   ├── fonts.py                  # Font download and install
-│   └── config.py                 # Default values and paths
-├── templates/
-│   ├── _index.md                 # Vault root routing file
-│   ├── daily-_index.md           # Daily notes index
-│   ├── skills-_index.md          # Skills catalog index
-│   ├── wiki-_index.md            # Wiki section index
-│   ├── raw-_index.md             # Raw ingestion index
-│   ├── domain-context.md         # Domain CONTEXT.md template
-│   ├── workspace-context.md      # Workspace CONTEXT.md template
-│   ├── me-skeleton.md            # me.md skeleton (pre-interview)
-│   ├── me-template.md            # me.md full template (post-interview)
-│   ├── daily-note-template.md    # Daily session note template
-│   └── heading-font.css          # DM Serif Display heading snippet
-├── docs/
-│   ├── interview-guide.md        # Self-administered identity interview
-│   ├── plugin-guide.md           # What each plugin does and how to configure
-│   └── font-guide.md             # Font stack explanation and alternatives
-├── CLAUDE.md                     # You are here
-├── CONTEXT.md                    # Task routing
-├── LICENSE                       # MIT
-├── README.md                     # Project overview
-├── pyproject.toml                # Python project config
+ideaverse-OS/
+├── src/
+│   └── cli.ts                 # Entry: npx ideaverse-os init
+├── templates/                  # Vault skeleton + lean files + router files (consumed by init)
+├── skills/                     # Bundled v1 skills (copied into 60-skills/_shared/ on init)
+├── docs/                       # Project docs (legacy + new)
+├── _archived/
+│   └── cli-python/             # Old Python CLI - reference only, not shipped
+├── package.json
+├── tsconfig.json
+├── README.md
+├── CONTRIBUTING.md
+├── LICENSE                     # MIT
+├── CLAUDE.md                   # You are here
+├── CONTEXT.md                  # Task routing
 └── .gitignore
 ```
 
----
-
 ## Rules
 
-- The CLI and SKILL.md are the primary products. Templates and docs support them.
-- Templates use `{{PLACEHOLDER}}` syntax for values the CLI or skill fills in.
-- The CLI must work without Claude Code — it's the manual path for anyone.
-- The skill is the AI-assisted path — it runs the interview and compiles me.md live.
-- Do not hardcode Kevin's personal details anywhere. This is a generic tool.
-- Font installation is optional. The vault must work without custom fonts.
+- **The CLI is the source of truth.** The Claude skill wrapper just shells out to the CLI; the site documents what the CLI produces.
+- **LLM-agnostic is non-negotiable.** Any feature that only works in Claude must be Phase 5 opt-in. Never blocking core init/build/capture.
+- **Vertical slices only.** Every task cuts CLI + Skills + Site simultaneously. Per soul.md.
+- **Detect-and-prompt for safety.** CLI never deletes user files. Conflict detection on init. Phase lock files before build compilation.
+- **No heavy dependencies.** Stay in the Node + Next.js + Tailwind ecosystem. No Python runtime for end users. No Electron, no Tauri.
+- **Templates use placeholder syntax** (e.g., `{{DOMAIN_1}}`) that the build interview fills in. Init alone leaves placeholders intact.
