@@ -1,6 +1,6 @@
 {
   "name": "ideaverse-os",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Bootstrap a position-addressed, LLM-agnostic knowledge vault from a template. Karpathy's wiki pattern with conversational ingestion baked in.",
   "type": "module",
   "bin": {

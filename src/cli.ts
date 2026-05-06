@@ -10,7 +10,7 @@ program
     "Bootstrap a position-addressed, LLM-agnostic knowledge vault. " +
       "Karpathy's wiki pattern with conversational ingestion baked in."
   )
-  .version("0.0.1");
+  .version("0.1.0");
 
 program
   .command("init")
