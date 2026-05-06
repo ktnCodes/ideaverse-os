@@ -42,14 +42,16 @@ For each phase, load the matching reference doc:
 
 | Phase | Reference | Status in v1 |
 |---|---|---|
-| compass | [reference/build-compass.md](reference/build-compass.md) | Implemented (Task 1) |
-| identity | [reference/build-identity.md](reference/build-identity.md) | Stub - implemented in Task 2 |
-| workflow | [reference/build-workflow.md](reference/build-workflow.md) | Stub - Task 3 |
-| domains | [reference/build-domains.md](reference/build-domains.md) | Stub - Task 4 |
-| optional-layers | [reference/build-optional-layers.md](reference/build-optional-layers.md) | Stub - Task 5 |
-| capture | [reference/capture.md](reference/capture.md) | Stub - Task 2 |
+| compass | [reference/build-compass.md](reference/build-compass.md) | Implemented |
+| identity | [reference/build-identity.md](reference/build-identity.md) | Implemented |
+| workflow | [reference/build-workflow.md](reference/build-workflow.md) | Implemented |
+| domains | [reference/build-domains.md](reference/build-domains.md) | Implemented (preset templates inline; per-template asset files come in slice 4) |
+| optional-layers | [reference/build-optional-layers.md](reference/build-optional-layers.md) | Implemented (sub-flow contracts; the actual hook/script files come in slice 5) |
+| capture | [reference/capture.md](reference/capture.md) | Stub - implemented in slice 2 |
 
-If the user invokes a phase that's still a stub, respond: *"Phase X is part of slice N (not yet implemented). v1.0 ships all 5 phases. For now, run `/ideaverse-os build --phase=compass`."*
+If the user invokes `capture` while it's still a stub, respond: *"Capture is part of slice 2, not yet implemented. v1.0 ships full capture. For now, run `/ideaverse-os build --phase=<phase>` for any of the 5 build phases."*
+
+For `domains` and `optional-layers`: the contract documents are written and the LLM can run the interview today. The supporting asset files (per-template starter folders for domains, hook scripts for optional layers) ship in slices 4 and 5 respectively. Until those land, the LLM should compile interview answers into folder/config writes directly (using the contract guidance) rather than copying pre-built template assets.
 
 ## Hard rules
 
