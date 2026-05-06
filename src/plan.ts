@@ -73,6 +73,18 @@ export type ScaffoldPlan = {
 export function planScaffold(target: string): ScaffoldPlan {
   const folders = SKELETON_FOLDERS.map((rel) => join(target, rel));
 
+  // Skill files are dropped at TWO locations inside the scaffolded vault:
+  //   1. 60-skills/_shared/<skill>/   -- harness-agnostic vault-resident copy.
+  //                                      LLMs that read CLAUDE.md/AGENTS.md/etc.
+  //                                      discover and follow the SKILL.md instructions.
+  //   2. .claude/skills/<skill>/      -- Claude Code's project-local skill discovery.
+  //                                      Enables the `/<skill>` slash command when
+  //                                      Claude Code is run from this vault directory.
+  //                                      Has no effect on Cursor/Aider/Codex/Gemini
+  //                                      (they ignore .claude/).
+  // Both copies are byte-identical. Two locations, one source of truth.
+  const SKILL_TARGET_BASES = ["60-skills/_shared", ".claude/skills"] as const;
+
   const skillFiles: FileWrite[] = [];
   for (const skill of BUNDLED_SKILLS) {
     const skillRoot = join(PACKAGE_ROOT, "templates", "bundled-skills", skill);
@@ -83,11 +95,13 @@ export function planScaffold(target: string): ScaffoldPlan {
         abs
       ); // e.g., "bundled-skills/ideaverse-os/SKILL.md"
       const insideSkill = relative(skillRoot, abs); // e.g., "SKILL.md" or "reference/build-compass.md"
-      skillFiles.push({
-        path: join(target, "60-skills", "_shared", skill, insideSkill),
-        templatePath: rel.replaceAll("\\", "/"),
-        kind: "skill",
-      });
+      for (const base of SKILL_TARGET_BASES) {
+        skillFiles.push({
+          path: join(target, base, skill, insideSkill),
+          templatePath: rel.replaceAll("\\", "/"),
+          kind: "skill",
+        });
+      }
     }
   }
 
