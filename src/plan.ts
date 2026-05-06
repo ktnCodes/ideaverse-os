@@ -1,5 +1,24 @@
-import { existsSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readdirSync, statSync } from "node:fs";
+import { join, relative, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const PACKAGE_ROOT = join(__dirname, "..");
+
+export const BUNDLED_SKILLS = ["ideaverse-os"] as const;
+
+function walkDir(dir: string): string[] {
+  const out: string[] = [];
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) {
+      out.push(...walkDir(full));
+    } else {
+      out.push(full);
+    }
+  }
+  return out;
+}
 
 export const SKELETON_FOLDERS = [
   "00-agentic-OS",
@@ -35,8 +54,8 @@ export type FileWrite = {
   path: string;
   /** Source template path relative to templates/ */
   templatePath: string;
-  /** "lean" | "router" | "config" */
-  kind: "lean" | "router" | "config";
+  /** Type of file. "skill" files are copied without placeholder substitution. */
+  kind: "lean" | "router" | "config" | "skill";
 };
 
 export type ScaffoldPlan = {
@@ -53,6 +72,24 @@ export type ScaffoldPlan = {
  */
 export function planScaffold(target: string): ScaffoldPlan {
   const folders = SKELETON_FOLDERS.map((rel) => join(target, rel));
+
+  const skillFiles: FileWrite[] = [];
+  for (const skill of BUNDLED_SKILLS) {
+    const skillRoot = join(PACKAGE_ROOT, "templates", "bundled-skills", skill);
+    if (!existsSync(skillRoot)) continue;
+    for (const abs of walkDir(skillRoot)) {
+      const rel = relative(
+        join(PACKAGE_ROOT, "templates"),
+        abs
+      ); // e.g., "bundled-skills/ideaverse-os/SKILL.md"
+      const insideSkill = relative(skillRoot, abs); // e.g., "SKILL.md" or "reference/build-compass.md"
+      skillFiles.push({
+        path: join(target, "60-skills", "_shared", skill, insideSkill),
+        templatePath: rel.replaceAll("\\", "/"),
+        kind: "skill",
+      });
+    }
+  }
 
   const files: FileWrite[] = [
     ...LEAN_FILES.map<FileWrite>((name) => ({
@@ -75,6 +112,7 @@ export function planScaffold(target: string): ScaffoldPlan {
       templatePath: ".gitignore.tmpl",
       kind: "config",
     },
+    ...skillFiles,
   ];
 
   const conflicts = files.filter((f) => existsSync(f.path));

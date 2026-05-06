@@ -1,9 +1,11 @@
 import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
+import { dirname } from "node:path";
 import { basename, resolve } from "node:path";
 import { detectPlatform, detectShell } from "./platform.js";
 import {
   defaultVars,
   loadAndSubstitute,
+  loadTemplate,
   type TemplateVars,
 } from "./templates.js";
 import { planScaffold, type FileWrite, type ScaffoldPlan } from "./plan.js";
@@ -13,6 +15,10 @@ import { buildPathsJson } from "./paths-json.js";
 function renderFile(file: FileWrite, vars: TemplateVars): string {
   if (file.kind === "config" && file.path.endsWith("paths.json")) {
     return buildPathsJson(vars);
+  }
+  if (file.kind === "skill") {
+    // Skills are copied verbatim (no placeholder substitution).
+    return loadTemplate(file.templatePath);
   }
   return loadAndSubstitute(file.templatePath, vars);
 }
@@ -125,6 +131,7 @@ export async function init(
       continue;
     }
     const content = renderFile(file, vars);
+    mkdirSync(dirname(file.path), { recursive: true });
     writeFileSync(file.path, content, "utf8");
     filesWritten++;
   }
