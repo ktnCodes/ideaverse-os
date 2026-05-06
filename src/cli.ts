@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { Command } from "commander";
+import { init } from "./scaffold.js";
 
 const program = new Command();
 
@@ -15,16 +16,26 @@ program
   .command("init")
   .description("Scaffold a new ideaverse-OS vault at the given path")
   .argument("[path]", "Target path for the new vault", ".")
-  .option("--force", "Skip conflict prompts (overwrite without asking)", false)
-  .option("--dry-run", "Show what would be created without writing files", false)
-  .action((path: string, options: { force: boolean; dryRun: boolean }) => {
-    console.log("Hello, ideaverse-OS");
-    console.log(`  target path: ${path}`);
-    console.log(`  force:       ${options.force}`);
-    console.log(`  dry-run:     ${options.dryRun}`);
-    console.log("");
-    console.log("Task 1 (tracer slice) will implement actual scaffolding.");
-    process.exit(0);
-  });
+  .option(
+    "--force",
+    "Skip conflict prompts (overwrite without asking)",
+    false
+  )
+  .option(
+    "--dry-run",
+    "Show what would be created without writing files",
+    false
+  )
+  .action(
+    async (path: string, options: { force: boolean; dryRun: boolean }) => {
+      try {
+        const result = await init(path, options);
+        process.exit(result.aborted ? 1 : 0);
+      } catch (err) {
+        console.error("\nError:", err instanceof Error ? err.message : err);
+        process.exit(1);
+      }
+    }
+  );
 
 program.parse(process.argv);

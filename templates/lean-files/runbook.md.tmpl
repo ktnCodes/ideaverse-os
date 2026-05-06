@@ -1,0 +1,52 @@
+---
+name: {{USER_NAME}}'s runbook
+description: Skill workflows + cross-layer routing. The "what command for what intent" lookup table. Refresh weekly during /retro.
+type: runbook
+last-updated: {{TODAY}}
+review-cadence: weekly (during retro)
+auto_inject: true
+---
+
+# Runbook
+
+The session-routing playbook. Match intent to skill chain.
+
+---
+
+## Session starts
+
+| Trigger | Chain |
+|---|---|
+| Cross-domain check ("where am I?") | `/briefing` |
+| Mid-week focused build session | `/wiki-digest <topic>` -> proceed |
+| Coming back to a stale project | `/briefing` -> `/wiki-brief <project>` |
+| Capture an idea for a future cold-start session | `/idea-kickoff` |
+
+[TODO: build phase 3 (workflow) refines these chains based on your harness + workflow preferences]
+
+---
+
+## Capture chain
+
+When something worth ingesting arrives:
+
+| Source | Chain |
+|---|---|
+| YouTube URL | `/ideaverse-os capture <url>` -> auto-routes to yt-light-research |
+| Web page | Save via Obsidian Web Clipper -> `/ideaverse-os capture` (auto-detects drop) |
+| Plain idea / "I learned X" | `/ideaverse-os capture "I learned ..."` -> direct synthesis |
+
+---
+
+## Reflection chain
+
+| Trigger | Chain |
+|---|---|
+| End of work session | Stop hook fires `save-session.py` -> writes `70-daily/<date>-session-N.md` |
+| Daily reflection (cron) | `reflect.py` -> reads past 24h logs -> promotes to `memory.md` |
+
+---
+
+## Compass-first rule
+
+Any briefing or daily-note skill MUST lead its response with a one-line quote of `compass.md`'s "What I'm Optimizing For Right Now / This week" line. The compass is the priority filter.

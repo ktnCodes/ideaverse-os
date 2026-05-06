@@ -1,0 +1,46 @@
+# {{VAULT_NAME}}
+
+This is an **ideaverse-OS vault** -- a position-addressed, LLM-agnostic knowledge base. You are operating inside the user's personal knowledge system.
+
+## At session start, read these 6 files in order
+
+These files have `auto_inject: true` frontmatter. They define the user's identity, rules, current direction, and operating preferences. **Read them before doing anything else.**
+
+1. `00-agentic-OS/soul.md` -- Behavioral constraints. Universal rules.
+2. `00-agentic-OS/me.md` -- Identity dossier. Who the user is.
+3. `00-agentic-OS/user.md` -- Profile + workflow. How they operate.
+4. `00-agentic-OS/compass.md` -- Current direction. Priorities. Refresh monthly.
+5. `00-agentic-OS/memory.md` -- Append-only decision log.
+6. `00-agentic-OS/runbook.md` -- Skill chains and routing.
+
+## Folder map
+
+```
+{{VAULT_NAME}}/
+  00-agentic-OS/      # Lean 6-file harness (auto_inject)
+  10-cortex/          # LLM-compiled cross-domain knowledge
+  20-<your-domain-1>/ # First user domain (filled by /ideaverse-os build --phase=domains)
+  30-<your-domain-2>/ # Second user domain (filled by build phase 4)
+  40-raw/             # Unprocessed source ingestion (drop zone)
+  50-research-library/# Curated research, deepresearch outputs
+  60-skills/          # Bundled vault-resident skills (LLM-agnostic)
+  70-daily/           # Daily notes (YYYY-MM-DD-<domain>.md)
+  80-visualization/   # Attachments, diagrams, screenshots
+  90-copilot/         # Copilot-specific prompts (optional)
+  99-archive/         # Archived raw sources
+```
+
+## Skill conventions
+
+- Skills live in `60-skills/_shared/`. Each is a folder with `SKILL.md` + (optional) `reference/`, `scripts/`, `agents/`.
+- The skills are **harness-agnostic** markdown + Node `.mjs` scripts. They work in any LLM CLI that can read project files and run shell commands.
+- Run `/ideaverse-os build --phase=<phase>` to compile your identity into the lean 6 files via interview.
+- Run `/ideaverse-os capture` to ingest sources (YouTube, web pages, ideas) into 40-raw + auto-update 10-cortex.
+
+## Initial state
+
+The lean 6 files in `00-agentic-OS/` currently contain `[TODO]` placeholders. Run `/ideaverse-os build --phase=compass` to start filling them. Each phase compiles to a lock file first; you confirm before files are written.
+
+---
+
+Vault scaffolded {{TODAY}} via `npx ideaverse-os init`. Site: https://ideaverse-os.ktncodes.com

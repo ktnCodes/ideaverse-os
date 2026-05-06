@@ -1,0 +1,25 @@
+---
+name: {{USER_NAME}}'s memory
+description: Append-only log of decisions, insights, and corrections worth carrying across sessions. Managed by the reflection cron.
+type: memory
+last-updated: {{TODAY}}
+review-cadence: append-only (never edited, never pruned)
+auto_inject: true
+---
+
+# Memory
+
+Promoted insights from past sessions. Read-only at session start; appended to by the reflection process.
+
+---
+
+## How this file works
+
+- New entries are appended under a dated heading (`## YYYY-MM-DD`)
+- Entries are short bullets describing decisions, debugging insights, project status changes, or workflow preferences
+- The reflection script (`reflect.py`) reads recent session logs, identifies what's worth promoting, and appends here
+- Manual edits are fine but discouraged -- the file is meant to grow organically
+
+---
+
+<!-- Reflection entries will be appended below this line as the cron runs. -->

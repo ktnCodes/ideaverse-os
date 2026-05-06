@@ -1,0 +1,45 @@
+# ideaverse-os vault gitignore (privacy-first defaults)
+# Customize after init -- this is just a sane starting point.
+
+# Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+
+# Runtime caches (skills may produce these)
+.cache/
+*.log
+*.pid
+
+# Large attachments (uncomment if you don't want screenshots tracked)
+# 80-visualization/attachments/
+
+# Node (if any skill has its own node_modules)
+node_modules/
+
+# Python (if a skill bundles a venv)
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.obsidian/workspace.json
+
+# yt-mcp / external clones (uncomment as needed)
+# 30-personal/mcps/yt-mcp/cache/
+# 40-raw/open-source-repos/
+
+# Work-only content (uncomment + adjust if you have a work domain you don't want pushed to a personal GitHub)
+# 20-work/
+# 60-skills/_work-win/
