@@ -32,7 +32,7 @@ export const SKELETON_FOLDERS = [
   "10-cortex",
   "40-raw",
   "50-research-library",
-  "60-skills/_shared",
+  "60-skills",
   "70-daily",
   "80-visualization",
   "99-archive",
@@ -80,7 +80,7 @@ export function planScaffold(target: string): ScaffoldPlan {
   const folders = SKELETON_FOLDERS.map((rel) => join(target, rel));
 
   // Skill files are dropped at TWO locations inside the scaffolded vault:
-  //   1. 60-skills/_shared/<skill>/   -- harness-agnostic vault-resident copy.
+  //   1. 60-skills/<skill>/   -- harness-agnostic vault-resident copy.
   //                                      LLMs that read CLAUDE.md/AGENTS.md/etc.
   //                                      discover and follow the SKILL.md instructions.
   //   2. .claude/skills/<skill>/      -- Claude Code's project-local skill discovery.
@@ -89,7 +89,7 @@ export function planScaffold(target: string): ScaffoldPlan {
   //                                      Has no effect on Cursor/Aider/Codex/Gemini
   //                                      (they ignore .claude/).
   // Both copies are byte-identical. Two locations, one source of truth.
-  const SKILL_TARGET_BASES = ["60-skills/_shared", ".claude/skills"] as const;
+  const SKILL_TARGET_BASES = ["60-skills", ".claude/skills"] as const;
 
   const skillFiles: FileWrite[] = [];
   for (const skill of BUNDLED_SKILLS) {

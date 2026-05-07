@@ -65,7 +65,7 @@ When `build --phase=workflow` is invoked on a vault where `user.md` already has 
 
 **Diff helper:** If the LLM harness supports shell execution, it can run the bundled script from vault root to show a line-level diff:
 ```
-node 60-skills/_shared/ideaverse-os/scripts/diff-detect.mjs 00-agentic-OS/user.md
+node 60-skills/ideaverse-os/scripts/diff-detect.mjs 00-agentic-OS/user.md
 ```
 Exit 0 = identical (no re-grill needed). Exit 1 = lock differs from current file (review before promoting).
 

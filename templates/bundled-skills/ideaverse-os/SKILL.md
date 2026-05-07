@@ -62,7 +62,7 @@ For `domains` and `optional-layers`: the contract documents are written and the 
 
 ## Architecture notes
 
-- Skill files live in this directory: `60-skills/_shared/ideaverse-os/`
+- Skill files live in this directory: `60-skills/ideaverse-os/`
 - The CLI (`npx ideaverse-os init`) scaffolds this skill into the vault. After init, the LLM in any harness can read this `SKILL.md`.
 - All file writes happen via the LLM using its native file-edit tools. No shell scripts required for the build flow.
 - Capture uses dispatched skills (`yt-light-research`, `web-clip-report`, etc.) which DO have shell scripts. See `reference/capture.md`.

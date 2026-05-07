@@ -11,7 +11,7 @@
  * If lock-file is omitted, infers <lean-file>.lock.md in the same directory.
  *
  * Example (run from vault root):
- *   node 60-skills/_shared/ideaverse-os/scripts/diff-detect.mjs \
+ *   node 60-skills/ideaverse-os/scripts/diff-detect.mjs \
  *     00-agentic-OS/user.md
  */
 

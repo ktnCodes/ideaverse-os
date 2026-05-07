@@ -50,7 +50,7 @@ Delegate to `/yt-light-research <url>`.
 
 That skill fetches the transcript, synthesizes a research note, and writes it to `40-raw/youtube/`. After it completes, take the written file path and continue to Step 3.
 
-If `/yt-light-research` is not available: "yt-light-research skill not found in 60-skills/_shared/. Re-run `npx ideaverse-os init --force` to restore bundled skills."
+If `/yt-light-research` is not available: "yt-light-research skill not found in 60-skills/. Re-run `npx ideaverse-os init --force` to restore bundled skills."
 
 ---
 

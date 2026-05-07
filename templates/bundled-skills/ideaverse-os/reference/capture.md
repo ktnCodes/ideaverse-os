@@ -8,7 +8,7 @@ The conversational ingestion router. Accepts a YouTube URL, plain HTTP URL, a fi
 
 ## How to handle /ideaverse-os capture
 
-When the user invokes `/ideaverse-os capture <arg>` or `/ideaverse-capture <arg>`, load and follow `60-skills/_shared/ideaverse-capture/SKILL.md`. That skill owns the full routing logic, step-by-step process, and quality rules.
+When the user invokes `/ideaverse-os capture <arg>` or `/ideaverse-capture <arg>`, load and follow `60-skills/ideaverse-capture/SKILL.md`. That skill owns the full routing logic, step-by-step process, and quality rules.
 
 Do not re-implement routing here. ideaverse-capture is the single source of truth.
 
@@ -29,7 +29,7 @@ After any ingestion: run `/cortex-compile <topic>` + `/cortex-connect`. Log to `
 
 ## Dispatched skills
 
-All bundled at `60-skills/_shared/` after `npx ideaverse-os init`:
+All bundled at `60-skills/` after `npx ideaverse-os init`:
 
 | Skill | Purpose |
 |---|---|

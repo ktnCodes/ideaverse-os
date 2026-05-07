@@ -31,7 +31,7 @@ These files have `auto_inject: true` frontmatter. They define the user's identit
 
 ## Skill conventions
 
-- Skills live in `60-skills/_shared/`. Each is a folder with `SKILL.md` + (optional) `reference/`, `scripts/`, `agents/`.
+- Skills live in `60-skills/`. Each is a folder with `SKILL.md` + (optional) `reference/`, `scripts/`, `agents/`.
 - The skills are **harness-agnostic** markdown + Node `.mjs` scripts. They work in any LLM CLI that can read project files and run shell commands.
 - Run `/ideaverse-os build --phase=<phase>` to compile your identity into the lean 6 files via interview.
 - Run `/ideaverse-os capture` to ingest sources (YouTube, web pages, ideas) into 40-raw + auto-update 10-cortex.

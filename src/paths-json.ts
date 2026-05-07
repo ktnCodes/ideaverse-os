@@ -17,12 +17,12 @@ export function buildPathsJson(vars: TemplateVars): string {
       "contents on that machine, or add a platforms.{name} block and have skills detect " +
       "platform via uname / $OSTYPE / vault_root probing.",
     _consumedBy: [
-      "60-skills/_shared/ideaverse-os",
-      "60-skills/_shared/cortex-compile",
-      "60-skills/_shared/cortex-lint",
-      "60-skills/_shared/cortex-connect",
-      "60-skills/_shared/web-clip-report",
-      "60-skills/_shared/yt-light-research",
+      "60-skills/ideaverse-os",
+      "60-skills/cortex-compile",
+      "60-skills/cortex-lint",
+      "60-skills/cortex-connect",
+      "60-skills/web-clip-report",
+      "60-skills/yt-light-research",
     ],
     vaultRoot: vars.VAULT_ROOT_ABSOLUTE,
     shell: vars.SHELL,
