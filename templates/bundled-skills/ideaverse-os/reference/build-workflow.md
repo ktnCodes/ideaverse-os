@@ -52,6 +52,23 @@ Sections in `user.md.tmpl`:
 
 Map answers to sections directly. user.md.tmpl already has the four headers; replace `[TODO]` markers with compiled content. Lock at `user.md.lock.md`, prompt, promote.
 
+## Re-run behavior
+
+When `build --phase=workflow` is invoked on a vault where `user.md` already has real content (no `[TODO]` markers):
+
+1. Read `user.md`. If it has substantive content, this is a **refresh run**, not a first-run.
+2. Check for a live lock file at `user.md.lock.md`. If it exists, use it as the starting point for the re-grill (the previous session may have been mid-flight).
+3. Present a summary of the existing content and ask: *"I see you already have workflow preferences in user.md. Do you want to (a) update specific sections, (b) re-run all questions, or (c) discard and start fresh?"*
+4. For partial updates: only re-ask questions for the sections the user wants to revise.
+5. Compile changes into a NEW lock file at `user.md.lock.md`. Show a diff summary (what changed vs the current user.md).
+6. Confirm and promote per the standard lock-file flow.
+
+**Diff helper:** If the LLM harness supports shell execution, it can run the bundled script from vault root to show a line-level diff:
+```
+node 60-skills/_shared/ideaverse-os/scripts/diff-detect.mjs 00-agentic-OS/user.md
+```
+Exit 0 = identical (no re-grill needed). Exit 1 = lock differs from current file (review before promoting).
+
 ## After workflow is locked
 
 Suggest the natural next step:
