@@ -1,0 +1,8 @@
+20-craft/drafts
+20-craft/finished
+20-craft/references
+20-craft/process-notes
+30-business/clients
+30-business/finances
+30-business/contracts
+30-business/marketing

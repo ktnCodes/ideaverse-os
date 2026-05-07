@@ -1,0 +1,11 @@
+{
+  "name": "trader-investor",
+  "displayName": "Trader / Investor",
+  "tagline": "Two domains: what you hold and what you are studying.",
+  "useCase": "Active traders, angel investors, crypto participants, finance-focused individuals. Separates the live portfolio and trade log from the macro thesis and company research that informs it.",
+  "domains": [
+    { "slot": "20", "defaultSlug": "portfolio", "label": "Portfolio" },
+    { "slot": "30", "defaultSlug": "research", "label": "Research" }
+  ],
+  "previewImage": null
+}

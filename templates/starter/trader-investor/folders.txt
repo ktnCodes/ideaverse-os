@@ -1,0 +1,8 @@
+20-portfolio/positions
+20-portfolio/trades
+20-portfolio/pnl
+20-portfolio/watchlist
+30-research/macro
+30-research/companies
+30-research/thesis
+30-research/sectors

@@ -1,0 +1,11 @@
+{
+  "name": "dayjob-sideproject",
+  "displayName": "Day-job + Side Project",
+  "tagline": "Two domains: the thing paying the bills and the thing you are building toward.",
+  "useCase": "Consultants, employed-but-building professionals, indie hackers. Works when your side project has its own product, growth, and operations that need to stay separated from your employer work.",
+  "domains": [
+    { "slot": "20", "defaultSlug": "dayjob", "label": "Day Job" },
+    { "slot": "30", "defaultSlug": "sideproject", "label": "Side Project" }
+  ],
+  "previewImage": null
+}

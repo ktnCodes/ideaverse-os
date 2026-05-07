@@ -1,0 +1,11 @@
+20-work/_bugs
+20-work/_features
+20-work/_other-work-items
+20-work/reference/guides
+20-work/reference/concepts
+20-work/reference/tools
+20-work/product
+30-personal/career
+30-personal/learning
+30-personal/portfolio
+30-personal/finances

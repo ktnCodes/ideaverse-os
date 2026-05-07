@@ -1,0 +1,7 @@
+20-dayjob/clients-or-employer
+20-dayjob/reference
+20-dayjob/meetings
+30-sideproject/product
+30-sideproject/growth
+30-sideproject/operations
+30-sideproject/legal

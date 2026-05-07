@@ -1,0 +1,11 @@
+{
+  "name": "creative",
+  "displayName": "Creative",
+  "tagline": "Two domains: the craft and the business of selling the craft.",
+  "useCase": "Writers, designers, illustrators, musicians, photographers. Separates the actual creative output from the clients, contracts, and finances needed to sustain it.",
+  "domains": [
+    { "slot": "20", "defaultSlug": "craft", "label": "Craft" },
+    { "slot": "30", "defaultSlug": "business", "label": "Business" }
+  ],
+  "previewImage": null
+}

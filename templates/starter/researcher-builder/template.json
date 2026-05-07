@@ -1,0 +1,11 @@
+{
+  "name": "researcher-builder",
+  "displayName": "Researcher + Builder",
+  "tagline": "Two domains: the questions you are investigating and the things you are shipping.",
+  "useCase": "Academics, scientists, independent researchers, developer-researchers. Keeps literature review and experiment logs separate from the prototypes and products they produce.",
+  "domains": [
+    { "slot": "20", "defaultSlug": "research", "label": "Research" },
+    { "slot": "30", "defaultSlug": "building", "label": "Building" }
+  ],
+  "previewImage": null
+}

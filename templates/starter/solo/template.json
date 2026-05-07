@@ -1,0 +1,10 @@
+{
+  "name": "solo",
+  "displayName": "Solo",
+  "tagline": "One domain. For people whose life and work blur into a single focus area.",
+  "useCase": "Focused builders, solopreneurs, single-mission researchers. Skips the 30- slot entirely. Everything lives in 20-work/.",
+  "domains": [
+    { "slot": "20", "defaultSlug": "work", "label": "Work" }
+  ],
+  "previewImage": null
+}

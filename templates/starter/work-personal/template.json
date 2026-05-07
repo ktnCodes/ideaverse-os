@@ -1,0 +1,11 @@
+{
+  "name": "work-personal",
+  "displayName": "Work + Personal",
+  "tagline": "Default Western knowledge-worker split. Two domains: your job and the rest of your life.",
+  "useCase": "Software engineers, managers, analysts, and most employed professionals. Works best when your job and personal life have distinct goals, tools, and cadences.",
+  "domains": [
+    { "slot": "20", "defaultSlug": "work", "label": "Work" },
+    { "slot": "30", "defaultSlug": "personal", "label": "Personal" }
+  ],
+  "previewImage": null
+}

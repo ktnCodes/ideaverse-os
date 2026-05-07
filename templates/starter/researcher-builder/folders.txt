@@ -1,0 +1,8 @@
+20-research/papers
+20-research/experiments
+20-research/notes
+20-research/reading-list
+30-building/projects
+30-building/prototypes
+30-building/archives
+30-building/tooling
