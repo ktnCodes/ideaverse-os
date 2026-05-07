@@ -35,7 +35,6 @@ export const SKELETON_FOLDERS = [
   "60-skills/_shared",
   "70-daily",
   "80-visualization",
-  "90-copilot",
   "99-archive",
 ] as const;
 

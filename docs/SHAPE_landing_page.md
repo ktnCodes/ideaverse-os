@@ -118,7 +118,7 @@ Every section opens with a numbered eyebrow label
 | Hero "Why this exists" 1-sentence intro under tagline | NEW — must mention "position-addressed", "harness-agnostic", "interview" |
 | Why section — comparison table | Existing (5 systems + ideaverse-os filling-in row needs adding) |
 | Why section — synthesis paragraph beneath table | NEW — "Here's what we kept from each, and what we changed" |
-| 20 / Walkthrough — position-addressed grid labels | NEW — `00-agentic-OS`, `10-cortex`, `20-work` (or domain1), `30-personal` (or domain2), `40-raw`, `50-research-library`, `60-skills`, `70-daily`, `80-visualization`, `90-copilot`, `99-archive` |
+| 20 / Walkthrough — position-addressed grid labels | NEW — `00-agentic-OS`, `10-cortex`, `20-work` (or domain1), `30-personal` (or domain2), `40-raw`, `50-research-library`, `60-skills`, `70-daily`, `80-visualization`, `99-archive` |
 | 20 / Walkthrough — 5-phase timeline | NEW — 1-2 real sample questions per phase. Source from PRD §"Build interview" or `idea-kickoff` skill |
 | 30 / Templates — 6 starter template names + taglines + example users | Existing in PRD Appendix A: Work+Personal, Creative, Researcher+Builder, Trader/Investor, Day-job+Side-project, Solo, Custom |
 | 30 / Templates — folder trees per template | NEW — synthesize from the position-addressed prefix scheme + per-template variations |
