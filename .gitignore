@@ -35,3 +35,8 @@ coverage/
 __pycache__/
 *.pyc
 *.pyo
+
+# impeccable / playwright session artifacts
+/.playwright-mcp/
+/*.png
+
