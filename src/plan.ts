@@ -5,7 +5,14 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PACKAGE_ROOT = join(__dirname, "..");
 
-export const BUNDLED_SKILLS = ["ideaverse-os"] as const;
+export const BUNDLED_SKILLS = [
+  "ideaverse-os",
+  "ideaverse-capture",
+  "cortex-compile",
+  "cortex-connect",
+  "web-clip-report",
+  "yt-light-research",
+] as const;
 
 function walkDir(dir: string): string[] {
   const out: string[] = [];
