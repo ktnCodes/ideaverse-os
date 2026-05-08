@@ -10,6 +10,7 @@ export const BUNDLED_SKILLS = [
   "ideaverse-capture",
   "cortex-compile",
   "cortex-connect",
+  "cortex-lint",
   "web-clip-report",
   "yt-light-research",
 ] as const;

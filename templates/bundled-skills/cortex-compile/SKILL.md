@@ -63,7 +63,9 @@ sources:
   - "[source-path]"
 created: YYYY-MM-DD
 last_compiled: YYYY-MM-DD
+verified_at: YYYY-MM-DD
 confidence: low | medium | high
+staleness_signal: "[one-line condition that, if true, means this article is stale]"
 ---
 
 # [Concept Name]
@@ -73,6 +75,7 @@ One-sentence definition of what this is.
 ## TL;DR
 
 50-100 words. What this is and why the reader cares. Enough to know whether to keep reading.
+This section is required -- cortex-lint flags articles missing it.
 
 ## Summary
 
@@ -92,18 +95,26 @@ Emphasize the "why" and key insights, not definitions. Ground it in their active
 
 ## Sources
 
-- [[40-raw/youtube/light-research-slug.md]] -- one-line note on what this source contributed
-- [[40-raw/web-clips/clip-slug.md]] -- one-line note
+Use typed-edge prefixes so the relationship between source and claim is explicit:
+
+- supports:: [[40-raw/youtube/light-research-slug.md]] -- one-line note on what this source supports
+- contradicts:: [[40-raw/web-clips/clip-slug.md]] -- one-line note on what claim this source disputes
+- extends:: [[40-raw/papers/paper-slug.md]] -- one-line note on what this source builds on
+- mentions:: [[40-raw/youtube/passing-mention.md]] -- one-line note on a passing reference
+- inspired-by:: [[40-raw/plain/seed-thought.md]] -- one-line note on the seed idea
 ```
 
 ### Quality rules
 
 - One concept per article. If an article is over 600 words, consider splitting it.
 - Prefer updating over creating: new source 70%+ covered by existing article -> update, don't create.
-- Every article must have at least one entry in Sources.
+- Every article must have at least one entry in Sources, using one of the 5 typed-edge prefixes.
 - Every article must link to at least one other article in Connections.
+- Every article must have a 50-100 word `## TL;DR` section. cortex-lint enforces this.
 - Write for the vault owner. If `00-agentic-OS/me.md` is in context, use it to ground the "Used in" and TL;DR relevance.
 - Confidence: `high` for primary research or official docs, `medium` for credible analysis, `low` for speculation or single source.
+- `verified_at`: set to today's date when the article is created or substantively re-confirmed against current sources. cortex-lint flags articles where `verified_at` is older than 90 days.
+- `staleness_signal`: a one-line condition that, if true, means the article is no longer accurate. Examples: "model name changes", "API version bumps to v2", "company is acquired or shuts down". cortex-lint surfaces these for periodic review.
 - Do not invent. Only write facts supported by the source material.
 
 ---

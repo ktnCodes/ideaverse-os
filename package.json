@@ -1,16 +1,15 @@
 {
   "name": "ideaverse-os",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bootstrap a position-addressed, LLM-agnostic knowledge vault from a template. Karpathy's wiki pattern with conversational ingestion baked in.",
   "type": "module",
   "bin": {
-    "ideaverse-os": "./dist/cli.js"
+    "ideaverse-os": "dist/cli.js"
   },
   "main": "./dist/cli.js",
   "files": [
     "dist",
     "templates",
-    "skills",
     "README.md",
     "LICENSE"
   ],
@@ -38,7 +37,7 @@
   "homepage": "https://ideaverse-os.ktncodes.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ktnCodes/ideaverse-os.git"
+    "url": "git+https://github.com/ktnCodes/ideaverse-os.git"
   },
   "bugs": {
     "url": "https://github.com/ktnCodes/ideaverse-os/issues"

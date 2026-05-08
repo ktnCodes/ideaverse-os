@@ -1,6 +1,18 @@
 #!/usr/bin/env node
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { Command } from "commander";
 import { init } from "./scaffold.js";
+
+// Read the version from package.json at runtime so the CLI always reports
+// what was published, not whatever was hardcoded at the time the source
+// was last edited. Path: dist/cli.js -> ../package.json.
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const pkg: { version: string } = JSON.parse(
+  readFileSync(join(__dirname, "..", "package.json"), "utf8"),
+);
 
 const program = new Command();
 
@@ -10,7 +22,7 @@ program
     "Bootstrap a position-addressed, LLM-agnostic knowledge vault. " +
       "Karpathy's wiki pattern with conversational ingestion baked in."
   )
-  .version("0.1.0");
+  .version(pkg.version);
 
 program
   .command("init")
