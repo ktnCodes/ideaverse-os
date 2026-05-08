@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>Components · Comparison Row</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 22px 26px; background: var(--cream); }
+  .lbl  { font-family: var(--font-body); font-weight: 600; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+  .table { border: 1px solid var(--wine-15); }
+  .row { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; padding: 12px 16px; border-bottom: 1px solid var(--wine-15); }
+  .row:last-child { border-bottom: 0; }
+  .row:nth-child(odd)  { background: var(--cream-pale); }
+  .row:nth-child(even) { background: var(--cream-deep); }
+  .sys { font-family: var(--font-mono); font-size: 14px; color: var(--ink); }
+  .miss { font-family: var(--font-body); font-size: 14px; line-height: 1.5; color: var(--ink); max-width: none; }
+  .miss b { color: var(--wine); font-weight: 600; }
+  .note { font-family: var(--font-body); font-size: 11px; color: var(--ink-soft); margin-top: 10px; max-width: none; }
+</style>
+</head>
+<body>
+  <div class="lbl">12 / Comparison Table · The Brand Argument</div>
+  <div class="table">
+    <div class="row"><div class="sys">Karpathy raw → wiki</div><div class="miss">No template; you build it manually</div></div>
+    <div class="row"><div class="sys">AI Impact infinite_brain</div><div class="miss">16 node types + 10 edge types; over-engineered</div></div>
+    <div class="row"><div class="sys">Tiago Forte PARA</div><div class="miss">Designed for human re-reading, not agent retrieval</div></div>
+    <div class="row"><div class="sys">Cole Medin AI second brain</div><div class="miss">Static identity; no ingestion model; Claude-only</div></div>
+    <div class="row"><div class="sys">Nick Milo Ideaverse-OS</div><div class="miss">Vault template only; no LLM build flow</div></div>
+  </div>
+  <p class="note">Alternating cream-pale / cream-deep rows. Wine 1px frame. Mono system names · body "what's missing".</p>
+</body></html>

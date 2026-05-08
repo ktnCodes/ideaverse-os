@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>Components · Chips</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 22px 26px; background: var(--cream); }
+  .lbl  { font-family: var(--font-body); font-weight: 600; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 2px; font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.2; border: 1px solid; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .rose { background: var(--rose-15); color: var(--wine); border-color: var(--wine-30); }
+  .amber { background: oklch(0.78 0.10 75 / 0.20); color: oklch(0.45 0.12 75); border-color: oklch(0.55 0.12 75 / 0.40); }
+  .blue { background: oklch(0.62 0.05 240 / 0.18); color: oklch(0.40 0.05 240); border-color: oklch(0.50 0.05 240 / 0.40); }
+  .lavender { background: oklch(0.65 0.08 290 / 0.18); color: oklch(0.42 0.08 290); border-color: oklch(0.55 0.08 290 / 0.40); }
+  .badge { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 999px; background: var(--rose-15); color: var(--wine); border: 1px solid var(--wine-30); font-family: var(--font-mono); font-size: 12px; }
+  .meta { font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+  <div class="lbl">10 / Chips & Status Badge</div>
+  <div class="meta">SEMANTIC CHIPS · color carries meaning</div>
+  <div class="row">
+    <span class="chip rose">Status</span>
+    <span class="chip amber">Energy / New</span>
+    <span class="chip blue">Skill</span>
+    <span class="chip lavender">Wikilink</span>
+  </div>
+  <div class="meta">STATUS BADGE · the only pill in the system</div>
+  <div class="row">
+    <span class="badge"><span class="dot" style="background: var(--wine)"></span>v0.0.1 · tracer slice live · v1.0 coming</span>
+  </div>
+</body></html>

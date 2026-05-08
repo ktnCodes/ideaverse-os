@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>Components · Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 22px 26px; background: var(--cream); }
+  .lbl  { font-family: var(--font-body); font-weight: 600; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+  .btn { font-family: var(--font-body); font-size: 12px; font-weight: 600; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; padding: 12px 20px; border-radius: 2px; cursor: pointer; border: 1px solid; transition: all 200ms var(--ease-out-quart); }
+  .primary { background: #B19CD9; color: var(--cream-pale); border-color: #B19CD9; }
+  .primary:hover { background: #8E7AB8; border-color: #8E7AB8; }
+  .secondary { background: var(--cream-pale); color: var(--ink); border-color: var(--ink-soft); }
+  .secondary:hover { background: var(--cream-deep); border-color: var(--ink); }
+  .ghost { background: transparent; color: var(--ink); border: 0; padding: 12px 4px; }
+  .ghost:hover { color: #8E7AB8; box-shadow: 0 1px 0 #8E7AB8; }
+  .meta { font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+  <div class="lbl">09 / Buttons · Primary · Secondary · Ghost</div>
+  <div class="meta">DEFAULT</div>
+  <div class="row">
+    <button class="btn primary">RUN THE INTERVIEW</button>
+    <button class="btn secondary">VIEW ON GITHUB</button>
+    <button class="btn ghost">READ THE SPEC</button>
+  </div>
+  <div class="meta">HOVER (simulated)</div>
+  <div class="row">
+    <button class="btn primary" style="background: #8E7AB8; border-color: #8E7AB8;">RUN THE INTERVIEW</button>
+    <button class="btn secondary" style="background: var(--cream-deep); border-color: var(--ink);">VIEW ON GITHUB</button>
+    <button class="btn ghost" style="color: #8E7AB8; box-shadow: 0 1px 0 #8E7AB8;">READ THE SPEC</button>
+  </div>
+  <div class="meta">FOCUS-VISIBLE · 2px amber outline, offset 2px</div>
+  <div class="row">
+    <button class="btn primary" style="outline: 2px solid var(--amber); outline-offset: 2px;">RUN THE INTERVIEW</button>
+  </div>
+</body></html>

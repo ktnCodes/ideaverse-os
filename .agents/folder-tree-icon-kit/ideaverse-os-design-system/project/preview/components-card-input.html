@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>Components · Card & Input</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 22px 26px; background: var(--cream); }
+  .lbl  { font-family: var(--font-body); font-weight: 600; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+  .card { background: var(--cream-pale); border: 1px solid var(--wine-15); padding: 20px 24px; border-radius: 0; }
+  .card h3 { font-family: var(--font-body); font-weight: 600; font-size: 16px; color: var(--teal); margin: 0 0 8px; line-height: 1.3; }
+  .card p { font-family: var(--font-body); font-size: 14px; line-height: 1.55; color: var(--ink); margin: 0; max-width: none; }
+  .field label { display: block; font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+  .field input { width: 100%; box-sizing: border-box; background: var(--cream-pale); border: 1px solid var(--ink-40); border-radius: 2px; padding: 10px 14px; font-family: var(--font-body); font-size: 14px; color: var(--ink); }
+  .field input:focus { outline: 2px solid var(--amber); outline-offset: 2px; border-color: var(--wine); border-width: 1.5px; }
+  .field .hint { font-family: var(--font-body); font-size: 11px; color: var(--ink-soft); margin-top: 6px; }
+</style>
+</head>
+<body>
+  <div class="lbl">11 / Card · Paper Surface (left) · Input · Field (right)</div>
+  <div class="grid">
+    <article class="card">
+      <h3>Init</h3>
+      <p>Scaffolds a position-addressed vault skeleton, drops a 6-file harness layer, and writes router files for every major LLM harness — Claude, Cursor, Aider, Codex, Gemini.</p>
+    </article>
+    <div class="field">
+      <label for="vault-path">Vault path</label>
+      <input id="vault-path" value="~/my-vault">
+      <div class="hint">Init never deletes user files. Conflict detection on every run.</div>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,211 @@
+/* =============================================================
+   ideaverse-os Design System — colors & type
+   Source of truth: DESIGN.md / DESIGN.json (imported from
+   ktnCodes/ideaverse-os@main).
+
+   Fonts are loaded via Google Fonts in fonts/fonts.css.
+   All color is authored in OKLCH per "The OKLCH-Only Rule".
+   ============================================================= */
+
+@import url("./fonts/fonts.css");
+
+:root {
+  /* ---------- Color: neutrals (cream + ink) ---------- */
+  --cream:        oklch(0.95 0.01  80);   /* base canvas */
+  --cream-pale:   oklch(0.97 0.01  80);   /* tonal lift  */
+  --cream-deep:   oklch(0.92 0.012 80);   /* tonal recess */
+  --ink:          oklch(0.30 0.02 280);   /* default body text */
+  --ink-soft:     oklch(0.45 0.02 280);   /* meta / captions   */
+
+  /* ---------- Color: identity ---------- */
+  --wine:         #8E7AB8;                /* primary identity (lilac) */
+  --wine-deep:    #6F5C99;                /* hover / pressed         */
+
+  /* ---------- Color: secondary voice ---------- */
+  --teal:         oklch(0.55 0.05 195);   /* h2 sub-heads, eyebrow */
+
+  /* ---------- Color: marginalia accents ---------- */
+  --rose:         oklch(0.78 0.06 15);    /* status / chips   */
+  --amber:        oklch(0.78 0.10 75);    /* energy / prompt  */
+  --blue:         oklch(0.62 0.05 240);   /* skill / schematic */
+  --lavender:     oklch(0.65 0.08 290);   /* wikilink / xref  */
+
+  /* ---------- Alpha helpers (use these instead of hand-mixing) ---------- */
+  --wine-15:      rgba(142, 122, 184, 0.15);
+  --wine-30:      rgba(142, 122, 184, 0.30);
+  --ink-10:       oklch(0.30 0.02 280 / 0.10);
+  --ink-40:       oklch(0.45 0.02 280 / 0.40);
+  --rose-10:      oklch(0.78 0.06  15 / 0.10);
+  --rose-15:      oklch(0.78 0.06  15 / 0.15);
+
+  /* ---------- Type families ---------- */
+  --font-display: "Lora", Georgia, serif;
+  --font-body:    "Inter", system-ui, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, monospace;
+
+  /* Vault skin (Obsidian-resident output). DM Serif + iA Writer Quattro
+     are not bundled — substitute via system stack until uploaded. */
+  --font-vault-body:    "Comfortaa", ui-rounded, system-ui, sans-serif;
+  --font-vault-display: "DM Serif Display", "Lora", Georgia, serif;
+  --font-vault-ui:      "iA Writer Quattro S", "iA Writer Quattro", ui-monospace, monospace;
+
+  /* ---------- Type scale (semantic) ---------- */
+  --fs-display:   clamp(2.75rem, 6vw,   4.5rem);   /* hero h1   */
+  --fs-headline:  clamp(1.75rem, 3.5vw, 2.5rem);   /* section h2 */
+  --fs-title:     1.125rem;                        /* h3 / dt   */
+  --fs-body:      1.0625rem;                       /* p         */
+  --fs-label:     0.75rem;                         /* eyebrow   */
+  --fs-mono:      0.9375rem;                       /* code      */
+
+  --lh-display:   1.05;
+  --lh-headline:  1.10;
+  --lh-title:     1.30;
+  --lh-body:      1.60;
+  --lh-label:     1.20;
+  --lh-mono:      1.50;
+
+  --ls-display:  -0.015em;
+  --ls-headline: -0.010em;
+  --ls-label:     0.120em;
+
+  /* ---------- Shape ---------- */
+  --r-none: 0px;
+  --r-sm:   2px;
+  --r-md:   4px;
+
+  /* ---------- Spacing (sparse 4px scale) ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-6:  24px;
+  --s-8:  32px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-24: 96px;
+
+  /* ---------- Motion ---------- */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.50, 1);
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.30, 1);
+  --dur-fast:   200ms;
+  --dur-medium: 700ms;
+  --dur-slow:   1200ms;
+
+  /* ---------- Layout ---------- */
+  --reader-max: 38rem;          /* 65–75ch — The Reader's Length Rule */
+  --page-max:  1200px;
+}
+
+/* =============================================================
+   Semantic element styles — apply on raw HTML so prototypes
+   without component classes still look like the brand.
+   Cap with `.ideaverse` if you'd rather scope; defaults are
+   provided unscoped to make demoing fast.
+   ============================================================= */
+
+html, body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: var(--wine);
+  margin: 0 0 var(--s-6);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-headline);
+  line-height: var(--lh-headline);
+  letter-spacing: var(--ls-headline);
+  color: var(--wine);
+  margin: 0 0 var(--s-4);
+  text-wrap: balance;
+}
+
+h3, dt {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  color: var(--teal);
+  margin: 0 0 var(--s-2);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  max-width: var(--reader-max);
+  text-wrap: pretty;
+  margin: 0 0 var(--s-4);
+}
+
+small, figcaption, .meta {
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}
+
+code, kbd, pre, samp {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  line-height: var(--lh-mono);
+}
+
+code {
+  background: var(--cream-deep);
+  padding: 0 var(--s-1);
+  border-radius: var(--r-sm);
+}
+
+a {
+  color: var(--wine);
+  text-decoration: none;
+  border-bottom: 1px solid var(--wine-30);
+  transition: color var(--dur-fast) var(--ease-out-quart),
+              border-color var(--dur-fast) var(--ease-out-quart);
+}
+a:hover { color: var(--wine-deep); border-bottom-color: var(--wine); }
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--ink-10);
+  margin: var(--s-12) 0;
+}
+
+/* Eyebrow / position-addressed marker */
+.eyebrow,
+.section-marker {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: var(--s-6);
+}
+
+/* Focus ring — outline, never glow (Flat-Paper Rule) */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

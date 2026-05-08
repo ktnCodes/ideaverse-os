@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>ideaverse-OS — Logo</title>
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #1a1330;
+    --muted: #6b6786;
+    --line: #ece9f5;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 32px;
+    padding: 40px clamp(24px, 6vw, 96px);
+  }
+
+  /* Hero — primary logo lockup */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(240px, 380px) 1fr;
+    gap: clamp(24px, 5vw, 72px);
+    align-items: center;
+    padding: clamp(40px, 7vw, 96px) clamp(32px, 6vw, 80px);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background:
+      radial-gradient(120% 120% at 0% 0%, #faf7ff 0%, #ffffff 60%);
+  }
+  .mark {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: block;
+  }
+  .wordmark-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .wordmark { width: 100%; height: auto; display: block; }
+  .tagline {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: clamp(11px, 0.95vw, 13px);
+    letter-spacing: 0.32em;
+    color: var(--muted);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  /* Spec strip */
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .spec {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 22px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 220px;
+  }
+  .spec.dark {
+    background: #0e0a1f;
+    border-color: #0e0a1f;
+  }
+  .spec-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .spec.dark .spec-label { color: #8a85a8; }
+  .spec-body {
+    flex: 1;
+    display: grid;
+    place-items: center;
+  }
+  .spec-body svg { width: 100%; height: auto; max-height: 150px; }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+  }
+  .swatch-cell { display: flex; flex-direction: column; gap: 6px; }
+  .swatch {
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+  }
+  .swatch-cell span {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .type-row {
+    display: flex; align-items: baseline; gap: 12px;
+    width: 100%; justify-content: space-between;
+  }
+  .type-row .name { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .type-row .meta {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px; color: var(--muted);
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; }
+    .specs { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+  <!-- Reusable defs -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="iv-grad" gradientUnits="userSpaceOnUse" x1="80" y1="560" x2="560" y2="120">
+        <stop offset="0%"   stop-color="#1FB8F2"/>
+        <stop offset="35%"  stop-color="#5A6BF0"/>
+        <stop offset="70%"  stop-color="#9F49E8"/>
+        <stop offset="100%" stop-color="#E14AC9"/>
+      </linearGradient>
+      <linearGradient id="iv-grad-flat" gradientUnits="userSpaceOnUse" x1="0" y1="160" x2="900" y2="0">
+        <stop offset="0%"   stop-color="#1FB8F2"/>
+        <stop offset="50%"  stop-color="#7A5BEC"/>
+        <stop offset="100%" stop-color="#E14AC9"/>
+      </linearGradient>
+
+      <!-- ============ THE MARK ============ -->
+      <symbol id="iv-mark" viewBox="0 0 640 640">
+        <!-- Outer / structural strokes (heavier) -->
+        <g fill="none" stroke="url(#iv-grad)"
+           stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+
+          <!-- Parent folder -->
+          <path d="
+            M 120 160
+            L 248 160
+            L 286 198
+            L 520 198
+            Q 540 198 540 218
+            L 540 372
+            Q 540 392 520 392
+            L 140 392
+            Q 120 392 120 372
+            Z"/>
+
+          <!-- T-bus connector -->
+          <line x1="330" y1="392" x2="330" y2="452"/>
+          <line x1="156" y1="452" x2="504" y2="452"/>
+          <line x1="156" y1="452" x2="156" y2="492"/>
+          <line x1="330" y1="452" x2="330" y2="492"/>
+          <line x1="504" y1="452" x2="504" y2="492"/>
+
+          <!-- Sub-folders (3 boxes) -->
+          <rect x="92"  y="492" width="128" height="128" rx="24" ry="24"/>
+          <rect x="266" y="492" width="128" height="128" rx="24" ry="24"/>
+          <rect x="440" y="492" width="128" height="128" rx="24" ry="24"/>
+        </g>
+
+        <!-- Inner glyphs (lighter stroke for legibility at logo size) -->
+        <g fill="none" stroke="url(#iv-grad)"
+           stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+
+          <!-- Cloud, centered (156, 556) -->
+          <path d="
+            M 126 580
+            Q 112 580 112 568
+            Q 112 556 124 554
+            Q 128 542 142 540
+            Q 156 530 170 540
+            Q 184 542 188 554
+            Q 200 556 200 568
+            Q 200 580 186 580
+            Z"/>
+
+          <!-- Light bulb, centered (330, 556) -->
+          <path d="
+            M 330 530
+            Q 308 530 308 550
+            Q 308 564 318 572
+            Q 322 576 322 582
+            L 338 582
+            Q 338 576 342 572
+            Q 352 564 352 550
+            Q 352 530 330 530 Z"/>
+          <line x1="322" y1="588" x2="338" y2="588"/>
+
+          <!-- Pencil, centered (504, 556), rotated -32° -->
+          <g transform="rotate(-32 504 556)">
+            <!-- outer silhouette: rounded eraser end + body + sharpened tip -->
+            <path d="
+              M 478 549
+              L 522 549
+              L 536 556
+              L 522 563
+              L 478 563
+              Q 472 563 472 556
+              Q 472 549 478 549 Z"/>
+            <!-- ferrule divider (eraser → wood) -->
+            <line x1="488" y1="549" x2="488" y2="563"/>
+            <!-- wood → graphite tip divider -->
+            <line x1="522" y1="549" x2="522" y2="563"/>
+          </g>
+        </g>
+      </symbol>
+
+      <!-- Mono variant (single color) -->
+      <symbol id="iv-mark-mono" viewBox="0 0 640 640">
+        <g fill="none" stroke="currentColor"
+           stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 120 160 L 248 160 L 286 198 L 520 198 Q 540 198 540 218 L 540 372 Q 540 392 520 392 L 140 392 Q 120 392 120 372 Z"/>
+          <line x1="330" y1="392" x2="330" y2="452"/>
+          <line x1="156" y1="452" x2="504" y2="452"/>
+          <line x1="156" y1="452" x2="156" y2="492"/>
+          <line x1="330" y1="452" x2="330" y2="492"/>
+          <line x1="504" y1="452" x2="504" y2="492"/>
+          <rect x="92"  y="492" width="128" height="128" rx="24" ry="24"/>
+          <rect x="266" y="492" width="128" height="128" rx="24" ry="24"/>
+          <rect x="440" y="492" width="128" height="128" rx="24" ry="24"/>
+        </g>
+        <g fill="none" stroke="currentColor"
+           stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 126 580 Q 112 580 112 568 Q 112 556 124 554 Q 128 542 142 540 Q 156 530 170 540 Q 184 542 188 554 Q 200 556 200 568 Q 200 580 186 580 Z"/>
+          <path d="M 330 530 Q 308 530 308 550 Q 308 564 318 572 Q 322 576 322 582 L 338 582 Q 338 576 342 572 Q 352 564 352 550 Q 352 530 330 530 Z"/>
+          <line x1="322" y1="588" x2="338" y2="588"/>
+          <g transform="rotate(-32 504 556)">
+            <path d="M 478 549 L 522 549 L 536 556 L 522 563 L 478 563 Q 472 563 472 556 Q 472 549 478 549 Z"/>
+            <line x1="488" y1="549" x2="488" y2="563"/>
+            <line x1="522" y1="549" x2="522" y2="563"/>
+          </g>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="page">
+
+    <!-- ============ HERO LOCKUP ============ -->
+    <section class="hero" aria-label="Primary logo lockup">
+      <svg class="mark" viewBox="0 0 640 640" aria-label="ideaverse-OS mark">
+        <use href="#iv-mark"/>
+      </svg>
+
+      <div class="wordmark-wrap">
+        <!-- Wordmark — viewBox sized to fit "ideaverse" + "-OS" without clipping.
+             Inter at 148 / -3 letter-spacing measured to ~ 880 user units. -->
+        <svg class="wordmark" viewBox="0 0 1000 220" aria-label="ideaverse-OS">
+          <text x="0" y="150"
+                font-family="'Inter','Helvetica Neue',Helvetica,Arial,sans-serif"
+                font-size="160" font-weight="700" letter-spacing="-4"
+                fill="url(#iv-grad-flat)">ideaverse-OS</text>
+        </svg>
+        <div class="tagline">A&nbsp;&nbsp;PLACE&nbsp;&nbsp;FOR&nbsp;&nbsp;IDEAS</div>
+      </div>
+    </section>
+
+    <!-- ============ SPEC STRIP ============ -->
+    <section class="specs" aria-label="Logo specs">
+
+      <!-- Reverse / dark -->
+      <div class="spec dark">
+        <div class="spec-label">Reverse</div>
+        <div class="spec-body">
+          <svg viewBox="0 0 640 640" aria-label="Mark on dark">
+            <use href="#iv-mark"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Mono ink -->
+      <div class="spec">
+        <div class="spec-label">Mono · Ink</div>
+        <div class="spec-body" style="color:#0e0a1f;">
+          <svg viewBox="0 0 640 640" aria-label="Mono">
+            <use href="#iv-mark-mono"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Palette -->
+      <div class="spec">
+        <div class="spec-label">Gradient stops</div>
+        <div class="spec-body" style="align-items:flex-start;">
+          <div class="swatches">
+            <div class="swatch-cell"><div class="swatch" style="background:#1FB8F2"></div><span>1FB8F2</span></div>
+            <div class="swatch-cell"><div class="swatch" style="background:#5A6BF0"></div><span>5A6BF0</span></div>
+            <div class="swatch-cell"><div class="swatch" style="background:#9F49E8"></div><span>9F49E8</span></div>
+            <div class="swatch-cell"><div class="swatch" style="background:#E14AC9"></div><span>E14AC9</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type -->
+      <div class="spec">
+        <div class="spec-label">Wordmark</div>
+        <div class="spec-body" style="align-items:flex-start; justify-items:start; width:100%;">
+          <svg viewBox="0 0 540 110" aria-hidden="true" style="width:100%; max-height:90px;">
+            <text x="0" y="78"
+                  font-family="'Inter','Helvetica Neue',Helvetica,Arial,sans-serif"
+                  font-size="84" font-weight="700" letter-spacing="-2"
+                  fill="url(#iv-grad-flat)">ideaverse-OS</text>
+          </svg>
+          <div class="type-row" style="margin-top:6px;">
+            <div class="name">Inter</div>
+            <div class="meta">700 · −0.025em</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>ideaverse-OS · brand mark v2</span>
+      <span>Outer 22 · Inner 13 · viewBox 640</span>
+    </footer>
+  </div>
+</body>
+</html>

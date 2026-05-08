@@ -1,0 +1,42 @@
+/* ideaverse-os fonts — pulled from Google Fonts.
+   The DESIGN.md stack is Lora 700 / Inter 400+600 / Geist Mono 400.
+   All three are Google-Fonts-hosted; no local TTFs needed.
+   If the user wants self-hosted woff2 files, drop them into this
+   folder and replace this @import block with @font-face declarations. */
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+/* iA Writer Quattro S — the proportional-mono iA uses on ia.net.
+   Open-source (SIL OFL) but not on Google Fonts. Served from jsDelivr.
+   IBM Plex Sans / Mono is the metric-compatible Google Fonts fallback. */
+@font-face {
+  font-family: "iA Writer Quattro S";
+  src: url("https://cdn.jsdelivr.net/gh/iaolo/iA-Fonts@master/iA%20Writer%20Quattro/Static/iAWriterQuattroS-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "iA Writer Quattro S";
+  src: url("https://cdn.jsdelivr.net/gh/iaolo/iA-Fonts@master/iA%20Writer%20Quattro/Static/iAWriterQuattroS-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "iA Writer Quattro S";
+  src: url("https://cdn.jsdelivr.net/gh/iaolo/iA-Fonts@master/iA%20Writer%20Quattro/Static/iAWriterQuattroS-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Vault skin — body font, self-hosted (uploaded by user). */
+@font-face {
+  font-family: "Comfortaa";
+  src: url("./Comfortaa-VariableFont_wght.ttf") format("truetype-variations"),
+       url("./Comfortaa-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}

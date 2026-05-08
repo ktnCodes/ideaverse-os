@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-06T00:00:00Z",
+  "title": "Design System: ideaverse-os",
+  "extensions": {
+    "colorMeta": {
+      "cream": {
+        "role": "neutral",
+        "displayName": "Old-Paper Cream",
+        "canonical": "oklch(0.95 0.01 80)",
+        "tonalRamp": [
+          "oklch(0.15 0.01 80)",
+          "oklch(0.27 0.01 80)",
+          "oklch(0.39 0.01 80)",
+          "oklch(0.51 0.01 80)",
+          "oklch(0.63 0.01 80)",
+          "oklch(0.75 0.01 80)",
+          "oklch(0.85 0.01 80)",
+          "oklch(0.95 0.01 80)"
+        ]
+      },
+      "cream-pale": {
+        "role": "neutral",
+        "displayName": "Cream Pale",
+        "canonical": "oklch(0.97 0.01 80)",
+        "tonalRamp": [
+          "oklch(0.15 0.01 80)",
+          "oklch(0.30 0.01 80)",
+          "oklch(0.45 0.01 80)",
+          "oklch(0.60 0.01 80)",
+          "oklch(0.72 0.01 80)",
+          "oklch(0.83 0.01 80)",
+          "oklch(0.92 0.01 80)",
+          "oklch(0.97 0.01 80)"
+        ]
+      },
+      "cream-deep": {
+        "role": "neutral",
+        "displayName": "Cream Deep",
+        "canonical": "oklch(0.92 0.012 80)",
+        "tonalRamp": [
+          "oklch(0.18 0.012 80)",
+          "oklch(0.30 0.012 80)",
+          "oklch(0.42 0.012 80)",
+          "oklch(0.55 0.012 80)",
+          "oklch(0.66 0.012 80)",
+          "oklch(0.78 0.012 80)",
+          "oklch(0.87 0.012 80)",
+          "oklch(0.92 0.012 80)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Notebook Ink",
+        "canonical": "oklch(0.30 0.02 280)",
+        "tonalRamp": [
+          "oklch(0.15 0.02 280)",
+          "oklch(0.22 0.02 280)",
+          "oklch(0.30 0.02 280)",
+          "oklch(0.40 0.02 280)",
+          "oklch(0.52 0.02 280)",
+          "oklch(0.66 0.02 280)",
+          "oklch(0.80 0.02 280)",
+          "oklch(0.93 0.02 280)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "oklch(0.45 0.02 280)",
+        "tonalRamp": [
+          "oklch(0.18 0.02 280)",
+          "oklch(0.28 0.02 280)",
+          "oklch(0.38 0.02 280)",
+          "oklch(0.45 0.02 280)",
+          "oklch(0.58 0.02 280)",
+          "oklch(0.70 0.02 280)",
+          "oklch(0.82 0.02 280)",
+          "oklch(0.93 0.02 280)"
+        ]
+      },
+      "wine": {
+        "role": "primary",
+        "displayName": "Editorial Wine",
+        "canonical": "oklch(0.45 0.13 18)",
+        "tonalRamp": [
+          "oklch(0.15 0.05 18)",
+          "oklch(0.25 0.08 18)",
+          "oklch(0.35 0.11 18)",
+          "oklch(0.45 0.13 18)",
+          "oklch(0.55 0.13 18)",
+          "oklch(0.68 0.11 18)",
+          "oklch(0.82 0.07 18)",
+          "oklch(0.95 0.04 18)"
+        ]
+      },
+      "wine-deep": {
+        "role": "primary",
+        "displayName": "Editorial Wine Deep",
+        "canonical": "oklch(0.38 0.14 18)",
+        "tonalRamp": [
+          "oklch(0.13 0.05 18)",
+          "oklch(0.22 0.09 18)",
+          "oklch(0.30 0.12 18)",
+          "oklch(0.38 0.14 18)",
+          "oklch(0.50 0.13 18)",
+          "oklch(0.64 0.10 18)",
+          "oklch(0.80 0.06 18)",
+          "oklch(0.95 0.03 18)"
+        ]
+      },
+      "teal": {
+        "role": "secondary",
+        "displayName": "Quiet Teal",
+        "canonical": "oklch(0.55 0.05 195)",
+        "tonalRamp": [
+          "oklch(0.15 0.02 195)",
+          "oklch(0.25 0.03 195)",
+          "oklch(0.35 0.04 195)",
+          "oklch(0.45 0.05 195)",
+          "oklch(0.55 0.05 195)",
+          "oklch(0.70 0.05 195)",
+          "oklch(0.85 0.03 195)",
+          "oklch(0.95 0.01 195)"
+        ]
+      },
+      "rose": {
+        "role": "tertiary",
+        "displayName": "Marginalia Rose",
+        "canonical": "oklch(0.78 0.06 15)",
+        "tonalRamp": [
+          "oklch(0.20 0.04 15)",
+          "oklch(0.32 0.06 15)",
+          "oklch(0.45 0.07 15)",
+          "oklch(0.58 0.07 15)",
+          "oklch(0.68 0.07 15)",
+          "oklch(0.78 0.06 15)",
+          "oklch(0.87 0.04 15)",
+          "oklch(0.96 0.02 15)"
+        ]
+      },
+      "amber": {
+        "role": "tertiary",
+        "displayName": "Highlighter Amber",
+        "canonical": "oklch(0.78 0.10 75)",
+        "tonalRamp": [
+          "oklch(0.18 0.04 75)",
+          "oklch(0.30 0.06 75)",
+          "oklch(0.42 0.08 75)",
+          "oklch(0.55 0.10 75)",
+          "oklch(0.66 0.11 75)",
+          "oklch(0.78 0.10 75)",
+          "oklch(0.88 0.07 75)",
+          "oklch(0.96 0.03 75)"
+        ]
+      },
+      "blue": {
+        "role": "tertiary",
+        "displayName": "Schematic Blue",
+        "canonical": "oklch(0.62 0.05 240)",
+        "tonalRamp": [
+          "oklch(0.15 0.02 240)",
+          "oklch(0.25 0.03 240)",
+          "oklch(0.35 0.04 240)",
+          "oklch(0.48 0.05 240)",
+          "oklch(0.62 0.05 240)",
+          "oklch(0.75 0.04 240)",
+          "oklch(0.87 0.03 240)",
+          "oklch(0.96 0.01 240)"
+        ]
+      },
+      "lavender": {
+        "role": "tertiary",
+        "displayName": "Wikilink Lavender",
+        "canonical": "oklch(0.65 0.08 290)",
+        "tonalRamp": [
+          "oklch(0.15 0.03 290)",
+          "oklch(0.25 0.05 290)",
+          "oklch(0.38 0.06 290)",
+          "oklch(0.50 0.08 290)",
+          "oklch(0.65 0.08 290)",
+          "oklch(0.78 0.06 290)",
+          "oklch(0.88 0.04 290)",
+          "oklch(0.96 0.02 290)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero h1 only. Wine color, tight tracking. Carries identity."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2 openers. Wine color."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Sub-section h3 and dt definition terms. Teal color."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default paragraph text. Ink color. Capped at 65-75ch via 38rem max-width."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Eyebrow labels above sections, chip text, install caption, button text. Uppercase 0.12em letter-spacing."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Install command, code blocks, file paths. Reserved for technical content only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Default exponential ease-out for entry animations (typing terminal, position-addressed grid cells, timeline phase reveals)."
+      },
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Stronger settle for scroll-pinned sections and template gallery cross-fades."
+      },
+      {
+        "name": "duration-fast",
+        "value": "200ms",
+        "purpose": "Template gallery folder-tree cross-fade. Hover state transitions."
+      },
+      {
+        "name": "duration-medium",
+        "value": "700ms",
+        "purpose": "Hero typing-terminal cadence. Position-addressed grid stagger total."
+      },
+      {
+        "name": "duration-slow",
+        "value": "1200ms",
+        "purpose": "Five-phase interview timeline phase transitions."
+      }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "360px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1440px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Status Badge",
+      "kind": "chip",
+      "refersTo": "chip-rose",
+      "description": "Live-status pill. Rose-tinted background, wine border, leading wine dot. Used for version + release-state callouts in the hero.",
+      "html": "<div class=\"ds-status-badge\"><span class=\"ds-status-badge__dot\" aria-hidden=\"true\"></span>v0.0.1 - tracer slice live - v1.0 coming</div>",
+      "css": ".ds-status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; background: oklch(0.78 0.06 15 / 0.15); color: oklch(0.45 0.13 18); border: 1px solid oklch(0.45 0.13 18 / 0.30); border-radius: 999px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; font-weight: 400; letter-spacing: 0; } .ds-status-badge__dot { width: 6px; height: 6px; border-radius: 50%; background: oklch(0.45 0.13 18); }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Wine-fill stamped block. Used for the second install CTA at the bottom of the page; not used on the hero (the hero uses the install code block instead).",
+      "html": "<button class=\"ds-btn-primary\">RUN THE INTERVIEW</button>",
+      "css": ".ds-btn-primary { background: oklch(0.45 0.13 18); color: oklch(0.97 0.01 80); border: 1px solid oklch(0.45 0.13 18); border-radius: 2px; padding: 12px 20px; font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; line-height: 1.2; text-transform: uppercase; cursor: pointer; transition: background 200ms cubic-bezier(0.25, 1, 0.5, 1), border-color 200ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-primary:hover { background: oklch(0.38 0.14 18); border-color: oklch(0.38 0.14 18); } .ds-btn-primary:focus-visible { outline: 2px solid oklch(0.78 0.10 75); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Cream-on-ink ghost block. Used for GitHub / npm / docs links in the footer-style sections.",
+      "html": "<button class=\"ds-btn-secondary\">VIEW ON GITHUB</button>",
+      "css": ".ds-btn-secondary { background: oklch(0.97 0.01 80); color: oklch(0.30 0.02 280); border: 1px solid oklch(0.45 0.02 280); border-radius: 2px; padding: 12px 20px; font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; line-height: 1.2; text-transform: uppercase; cursor: pointer; transition: background 200ms cubic-bezier(0.25, 1, 0.5, 1), border-color 200ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-secondary:hover { border-color: oklch(0.30 0.02 280); background: oklch(0.92 0.012 80); } .ds-btn-secondary:focus-visible { outline: 2px solid oklch(0.78 0.10 75); outline-offset: 2px; }"
+    },
+    {
+      "name": "Section Marker",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Numbered eyebrow label that opens every page section. Mirrors the vault's position-addressed prefix scheme. Brand asset: design demonstrates methodology.",
+      "html": "<div class=\"ds-section-marker\">10 / WHY</div>",
+      "css": ".ds-section-marker { display: inline-block; font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; line-height: 1.2; text-transform: uppercase; color: oklch(0.55 0.05 195); margin-bottom: 24px; }"
+    },
+    {
+      "name": "Install Code Block",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Hero install block. Cream-on-ink inversion with amber prompt. Live-typed in the actual page; this snapshot shows the resting state. Click-to-copy (button overlaid in the live page, omitted here for the panel snapshot).",
+      "html": "<pre class=\"ds-install\"><span class=\"ds-install__prompt\">$</span> npx ideaverse-os init ~/my-vault</pre>",
+      "css": ".ds-install { background: oklch(0.30 0.02 280); color: oklch(0.95 0.01 80); border: 1px solid oklch(0.45 0.13 18 / 0.30); border-radius: 12px; padding: 20px 24px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.5; overflow-x: auto; } .ds-install__prompt { color: oklch(0.78 0.10 75); margin-right: 8px; }"
+    },
+    {
+      "name": "Comparison Row",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "One row of the brand-thesis comparison table. Two columns (system name in mono, what's missing in body). Alternating rows use cream-deep tonal lift. The table itself is the brand argument.",
+      "html": "<div class=\"ds-cmp-row\"><div class=\"ds-cmp-row__sys\">Karpathy raw -> wiki</div><div class=\"ds-cmp-row__missing\">No template; you build it manually</div></div>",
+      "css": ".ds-cmp-row { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; padding: 12px 16px; background: oklch(0.78 0.06 15 / 0.10); border-bottom: 1px solid oklch(0.45 0.13 18 / 0.15); transition: background 200ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-cmp-row:hover { background: oklch(0.78 0.06 15 / 0.18); } .ds-cmp-row__sys { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: oklch(0.30 0.02 280); } .ds-cmp-row__missing { font-family: Inter, system-ui, sans-serif; font-size: 14px; line-height: 1.6; color: oklch(0.30 0.02 280); }"
+    },
+    {
+      "name": "Card Paper",
+      "kind": "card",
+      "refersTo": "card-paper",
+      "description": "Generic content surface. Cream-pale tonal lift over the page background; hairline wine border at 15% alpha; sharp corners. No shadow.",
+      "html": "<article class=\"ds-card-paper\"><h3 class=\"ds-card-paper__title\">Init</h3><p class=\"ds-card-paper__body\">Scaffolds a position-addressed vault skeleton, drops a 6-file harness layer, and writes router files for every major LLM harness.</p></article>",
+      "css": ".ds-card-paper { background: oklch(0.97 0.01 80); border: 1px solid oklch(0.45 0.13 18 / 0.15); border-radius: 0; padding: 24px 28px; max-width: 520px; } .ds-card-paper__title { font-family: Inter, system-ui, sans-serif; font-size: 18px; font-weight: 600; line-height: 1.3; color: oklch(0.55 0.05 195); margin: 0 0 8px 0; } .ds-card-paper__body { font-family: Inter, system-ui, sans-serif; font-size: 17px; font-weight: 400; line-height: 1.6; color: oklch(0.30 0.02 280); margin: 0; }"
+    },
+    {
+      "name": "Hero Headline",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Display Lora wine. Identity surface. Used once per page on the hero h1.",
+      "html": "<h1 class=\"ds-hero-h1\">ideaverse-os</h1>",
+      "css": ".ds-hero-h1 { font-family: Lora, Georgia, serif; font-size: clamp(2.75rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.015em; color: oklch(0.45 0.13 18); margin: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Position-Addressed Zine",
+    "overview": "ideaverse-os is a tech zine made of position-addressed cells. Each section of the page lives at its own numbered slot, hierarchically nested, cross-linked, harness-agnostic - exactly like the vault the product builds. The information architecture mirrors the product architecture; the design IS the methodology demonstrated. The atmosphere is warm-paper editorial with technical receipts. Cream backgrounds carry the page; wine serif headlines anchor identity; ink body text reads long; muted accent hues thread through diagrams, chips, and pull quotes the way a careful researcher annotates a printed document. The system is opinionated and slightly contrarian by design - the comparison table that names every competitor methodology IS the brand argument.",
+    "keyCharacteristics": [
+      "Cream-paper foundation with cream-on-cream tonal layering (no shadows).",
+      "Wine serif as identity anchor; ink as the workhorse text color.",
+      "Multi-hue accent palette (rose, amber, blue, lavender) used semantically, not decoratively.",
+      "Editorial typography: Lora 700 display, Inter body, Geist Mono code.",
+      "Sharp corners (0-4px max). Hairline 1px borders or no borders at all.",
+      "Position-addressed information architecture. Every section is a numbered cell.",
+      "Motion is teaching, not decoration. Reduced-motion gracefully reveals static composition."
+    ],
+    "rules": [
+      {
+        "name": "The One-Voice Rule",
+        "body": "In product register (concept docs pages), at most one accent color appears at any given time, occupying <=10% of viewport surface. Wine is the default. Mixing accents on a single docs page is forbidden - choose one.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pure-Black Ban",
+        "body": "#000 is never used. All neutrals tint toward purple-grey via the ink hue. #fff is never used either - every cream is warmed.",
+        "section": "colors"
+      },
+      {
+        "name": "The OKLCH-Only Rule",
+        "body": "All tokens are authored in OKLCH. Hex values appear only in commentary as approximations. Lightness and chroma are deliberately reduced near 0/100 to avoid garish color at extremes.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reader's Length Rule",
+        "body": "Body paragraphs cap at 65-75ch (38rem). Sidebars and pull-quotes may run shorter. No paragraph runs the full viewport width.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hierarchy Contrast Rule",
+        "body": "Each step in the type scale must contrast >=1.25x in size or >=200 weight units from its parent. Flat scales are prohibited - readers must feel hierarchy without reading the labels.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono-for-Code Rule",
+        "body": "Geist Mono is reserved for code, file paths, shell commands, and JSON keys. It is not used for branding flourishes, eyebrow labels, or tagline poetry - that's Inter Label's job.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-Paper Rule",
+        "body": "Surfaces are flat. Depth is communicated through cream-on-cream tonal shifts (cream-pale lifts, cream-deep recedes) and 1px hairline borders, never through shadow. The only exception is the focus ring, which uses an outline.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Borders are 1px. Wider colored stripes - especially side-stripe accent borders - are forbidden. If a divider needs more weight, increase its color saturation, not its thickness.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use OKLCH for all color authoring. Hex is approximation only.",
+      "Do keep wine to 30-60% of viewport surface in brand register, <=10% in product register.",
+      "Do use cream-on-cream tonal layering for depth. Three cream values (cream, cream-pale, cream-deep) is the elevation system.",
+      "Do open every section with a numbered eyebrow label (00 / OVERVIEW style). The position-addressed grid is a brand asset.",
+      "Do cite the methodology source for every claim - Karpathy / Milo / Chief / Forte / Medin / Cursor / Claude - in pull-quotes, footnotes, or inline.",
+      "Do cap body text at 65-75ch (38rem max-width on text containers).",
+      "Do provide a prefers-reduced-motion fallback that statically reveals every animated element.",
+      "Do scope all ideaverse-os tokens to the /ideaverse-os/* route. The parent app's dark theme must remain on every other route.",
+      "Do show harness-agnostic examples (Cursor / Aider / Codex / Gemini CLI) wherever a Claude example appears.",
+      "Do use ASCII-only copy. No em dashes, no smart quotes, no ellipsis characters."
+    ],
+    "donts": [
+      "Don't use #000 or #fff. Every neutral is tinted toward the brand hue family.",
+      "Don't use side-stripe borders (border-left >1px as a colored accent). Use full hairline borders or background tints instead.",
+      "Don't use gradient text (background-clip: text over a gradient). Solid wine on cream is the identity.",
+      "Don't use glassmorphism. No backdrop-filter: blur(...) on cards. Forbidden by the Flat-Paper Rule.",
+      "Don't use hero metric grids (10x faster / 5min setup / 99.9% uptime).",
+      "Don't use the dark-navy-cyan SaaS landing aesthetic. The parent ktncodes-v2 site already owns dark; ideaverse-os owns warm-paper editorial.",
+      "Don't use animated chatbot mockups, abstract 3D blobs, particle backgrounds, or 'Meet your AI second brain' copy.",
+      "Don't render the page as README-with-a-stylesheet. No shields.io badge rows. No table-of-contents sidebars in marketing pages.",
+      "Don't use box-shadow on any surface. Depth via tonal cream only.",
+      "Don't mix accent colors on a single product-register docs page. Per the One-Voice Rule.",
+      "Don't make motion load-bearing. Every animation must have a prefers-reduced-motion static-state equivalent.",
+      "Don't use beige sticky-note backgrounds or three-pane vault screenshots.",
+      "Don't assume Claude Code in copy. The product is harness-agnostic."
+    ]
+  }
+}

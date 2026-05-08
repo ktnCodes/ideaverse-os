@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ideaverse-os — marketing UI kit</title>
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <link rel="stylesheet" href="marketing.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root" class="ideaverse"></div>
+  <script type="text/babel" src="Components.jsx"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" data-presets="env,react">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "badgePosition": "right",
+      "badgeText": "v0.0.1 · tracer slice live · v1.0 coming",
+      "wineIntensity": "default",
+      "showSectionMarkers": true,
+      "heroAlign": "left"
+    }/*EDITMODE-END*/;
+
+    const WINE_PRESETS = {
+      "muted":   "#A693C5",
+      "default": "#8E7AB8",
+      "deep":    "#6F5C99"
+    };
+
+    const COMPARISON = [
+      { system: "Karpathy raw -> wiki",       missing: "No template. You build the structure manually." },
+      { system: "AI Impact infinite_brain",   missing: "16 node types, 10 edge types. Over-engineered for solo operators." },
+      { system: "Tiago Forte PARA",           missing: "Designed for human re-reading, not agent retrieval." },
+      { system: "Cole Medin AI second brain", missing: "Static identity files. No ingestion model. Claude-only." },
+      { system: "Nick Milo Ideaverse-OS",     missing: "Vault template only. No LLM build flow." },
+      { system: "ideaverse-os",               missing: "Position-addressed scaffold + LLM build interview + harness-agnostic ingestion. One command.", isUs: true },
+    ];
+
+    const KEPT = [
+      { who: "Karpathy",     what: "Raw -> wiki rhythm. Ingest cheap, synthesize deliberately.",                          src: "his recurring thread on personal wikis as memory" },
+      { who: "Nick Milo",    what: "Position-addressed prefixes (00, 10, 99) so the LLM never has to guess where things live.", src: "Linking Your Thinking, Ideaverse-OS template" },
+      { who: "Tiago Forte",  what: "Domain separation: work, personal, archive as first-class slots.",                   src: "PARA Method, Building a Second Brain" },
+      { who: "Cole Medin",   what: "Identity-as-files: who-you-are encoded in markdown the agent reads.",                src: "AI Agent Stack templates on GitHub" },
+    ];
+
+    const PREFIXES = [
+      { prefix: "00", name: "agentic-OS",       desc: "soul, me, user, compass, memory, runbook" },
+      { prefix: "10", name: "cortex",           desc: "synthesis surface (your wiki articles)" },
+      { prefix: "20", name: "work",             desc: "first user domain, named in the interview" },
+      { prefix: "30", name: "personal",         desc: "second user domain, named in the interview" },
+      { prefix: "40", name: "raw",              desc: "ingestion: web-clips, papers, youtube" },
+      { prefix: "50", name: "research-library", desc: "spikes, prompts, customization" },
+      { prefix: "60", name: "skills",           desc: "ideaverse-capture, cortex-*, web-clip-report" },
+      { prefix: "70", name: "daily",            desc: "daily notes" },
+      { prefix: "80", name: "visualization",    desc: "attachments, screenshots, diagrams" },
+      { prefix: "99", name: "archive",          desc: "retired sources and notes" },
+    ];
+
+    const PHASES = [
+      { name: "Compass",        title: "What you are optimizing for. This week, this month, this quarter.",
+        questions: [
+          "For each priority, what's the success metric? How will you know you succeeded vs. just stayed busy?",
+          "When two priorities collide -- a work emergency vs. a personal goal -- which wins? Is there a rule, or case-by-case?"
+        ],
+        compiles: "compass.md",
+        sample: "## What I'm Optimizing For\n\n### This week\n- Top bet: ship the build interview\n- Success metric: 1 user runs the 5 phases end-to-end\n\n### When priorities collide\nwork-emergency wins; log the swap in 70-daily/."
+      },
+      { name: "Identity",       title: "Who you are when you sit down to work.",
+        questions: [
+          "In 2-3 sentences: what drives you? What are you building toward over the next 1-2 years?",
+          "What are you known for among people who know you well? What do they come to you for?"
+        ],
+        compiles: "me.md",
+        sample: "## What drives me\nBuilding tools that compound my own work and other\npeople's work. The agentic-OS pattern.\n\n## Known for\nReceipts-first. Honest pushback. Bridging embedded\ndepth with AI-tooling depth."
+      },
+      { name: "Workflow",       title: "How you actually work, day to day.",
+        questions: [
+          "Which LLM harnesses do you use? Claude Code, Cursor, Aider, Codex CLI, Gemini CLI, ChatGPT, Copilot. For each, when?",
+          "Which is your primary -- the one you spend the most time in?"
+        ],
+        compiles: "user.md",
+        sample: "## Harnesses\nPrimary: Claude Code (Sonnet 4.6 build, Opus 4.7\ndesign + planning).\nSecondary: Cursor for refactors, Aider one-shots.\n\n## Daily rhythm\n06:30 /work-daily-note  ->  deep work 07:00-12:00"
+      },
+      { name: "Domains",        title: "How your life splits across folders 20- and 30-.",
+        questions: [
+          "Which template fits your mental model? work+personal, creative, researcher+builder, trader, day-job+side-project, solo, or custom?",
+          "Default name for your second domain is the template default. Use that, or rename?"
+        ],
+        compiles: "domains.lock",
+        sample: "template: work-personal\n\nmy-vault/\n+-- 20-work/        day job: AutoPath, Mytra\n+-- 30-personal/    career, portfolio, learning"
+      },
+      { name: "Optional layers",title: "Hooks, GitHub backup, WSL paths. All opt-in.",
+        questions: [
+          "You'll get three hooks: session-start (loads compass), load-memory (injects lean files), save-session (logs transcripts). Confirm all three, or pick a subset?"
+        ],
+        compiles: "runbook.md",
+        sample: "## Session starts\n\n| Trigger     | Chain                |\n|-------------|----------------------|\n| Mon-Fri AM  | /work-daily-note     |\n| Weekend PM  | /personal-daily-note |\n| Sunday PM   | /weekly-review       |"
+      },
+    ];
+
+    const HARNESSES = [
+      { name: "Claude Code", file: "CLAUDE.md" },
+      { name: "Cursor",      file: ".cursorrules" },
+      { name: "Aider",       file: "AIDER_CONVENTIONS.md" },
+      { name: "Codex CLI",   file: "AGENTS.md" },
+      { name: "Gemini CLI",  file: "GEMINI.md" },
+    ];
+
+    const TEMPLATES = [
+      { name: "Custom",                 tagline: "Blank slate, build your own split.", example: "anyone whose life does not map to the presets",
+        domains: [
+          { num: "20", name: "<your-first-domain>",  intent: "name it in the interview" },
+          { num: "30", name: "<your-second-domain>", intent: "name it in the interview" },
+        ] },
+      { name: "Work + Personal",        tagline: "The classic split.",                 example: "engineer with a day job and weekend projects",
+        domains: [
+          { num: "20", name: "work",     intent: "day job, projects, OKRs" },
+          { num: "30", name: "personal", intent: "career, family, life" },
+        ] },
+      { name: "Creative",               tagline: "Make-things-first.",                  example: "artist, writer, or musician with life on the side",
+        domains: [
+          { num: "20", name: "craft",    intent: "drafts, references, releases" },
+          { num: "30", name: "personal", intent: "everything else" },
+        ] },
+      { name: "Researcher + Builder",   tagline: "Reading meets shipping.",             example: "indie hacker who research-then-builds",
+        domains: [
+          { num: "20", name: "research", intent: "papers, notes, claims" },
+          { num: "30", name: "build",    intent: "products, repos, launches" },
+        ] },
+      { name: "Trader / Investor",      tagline: "Markets first, life second.",         example: "full-time trader, part-time everything else",
+        domains: [
+          { num: "20", name: "markets",  intent: "theses, positions, post-mortems" },
+          { num: "30", name: "personal", intent: "everything else" },
+        ] },
+      { name: "Day-job + Side-project", tagline: "Both fit-for-purpose.",               example: "PM with a serious side project",
+        domains: [
+          { num: "20", name: "day-job",      intent: "the paying gig" },
+          { num: "30", name: "side-project", intent: "the bet on yourself" },
+        ] },
+      { name: "Solo",                   tagline: "One life, one folder.",              example: "founder, freelancer, generalist",
+        domains: [
+          { num: "20", name: "life", intent: "everything, organized inside" },
+        ] },
+    ];
+
+    const CONCEPTS = [
+      { eyebrow: "Why this exists",   title: "Karpathy's wiki, made buildable", desc: "The gist of the post that started it: cheap raw capture, deliberate synthesis, position-addressed memory the agent can find without guessing." },
+      { eyebrow: "What's a harness?", title: "Harness-agnostic design",         desc: "Why we load through CLAUDE.md, .cursorrules, AGENTS.md, GEMINI.md instead of inventing a new convention." },
+      { eyebrow: "Position-addressed", title: "Why prefixes beat tags",         desc: "Numbered folders give the LLM one canonical place per idea. Tags give it a search problem." },
+      { eyebrow: "The build interview", title: "Five phases, conversational",  desc: "Compass, identity, workflow, domains, optional layers -- compiled into the lean files your harness already reads." },
+    ];
+
+    function App() {
+      const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+      const wine = WINE_PRESETS[t.wineIntensity] || WINE_PRESETS.default;
+      const heroAlignStyle = t.heroAlign === "center"
+        ? { textAlign: "center" }
+        : null;
+
+      return (
+        <main className="iv-page" style={{ "--wine": wine }}>
+          {/* ============== Hero ============== */}
+          <section className="iv-hero iv-section" style={heroAlignStyle || undefined}>
+            <div className="iv-hero-head" style={{
+              justifyContent: t.badgePosition === "right" ? "space-between" : "flex-start",
+              flexDirection:  t.badgePosition === "right" ? "row" : "column",
+              alignItems:     t.badgePosition === "right" ? "center" : "flex-start"
+            }}>
+              {t.showSectionMarkers ? <SectionLabel number="00" label="Overview" /> : null}
+              <StatusBadge>{t.badgeText}</StatusBadge>
+            </div>
+            <h1>ideaverse-os</h1>
+            <p className="iv-tagline">Your knowledge base, written by conversation.</p>
+            <p className="iv-intro">
+              Bootstrap a position-addressed, LLM-agnostic knowledge vault in one command.
+              Karpathy's wiki pattern with conversational ingestion baked in.
+            </p>
+            <InstallBlock />
+            <div style={{ display: "flex", gap: 12, marginTop: 20, alignItems: "center" }}>
+              <SecondaryButton>VIEW ON GITHUB</SecondaryButton>
+              <GhostLink>READ THE PRD &rarr;</GhostLink>
+            </div>
+            <VaultDemo />
+          </section>
+
+          {/* ============== Install ============== */}
+          <section className="iv-section iv-install-row">
+            <div className="iv-install-row__copy">
+              {t.showSectionMarkers ? <SectionLabel number="05" label="Install" /> : null}
+              <h2 className="iv-h2">One command. Any harness.</h2>
+              <p className="iv-lede">
+                The skill is a single npx command. It writes the position-addressed
+                scaffold and registers itself with whichever LLM tool you already use.
+              </p>
+            </div>
+            <div className="iv-install-row__term">
+              <TypingTerminal
+                command="npx ideaverse-os@latest init ~/my-vault"
+                scaffoldLines={[
+                  "  scaffolding ~/my-vault",
+                  "  + 00-agentic-OS/",
+                  "  + 10-cortex/",
+                  "  + 20- ... 99-archive/",
+                  "  + CLAUDE.md, .cursorrules, AGENTS.md",
+                  "",
+                  "  next: open your harness, run /ideaverse-os build"
+                ]}
+              />
+            </div>
+          </section>
+
+          {/* ============== Why ============== */}
+          <section className="iv-section">
+            {t.showSectionMarkers ? <SectionLabel number="10" label="Why" /> : null}
+            <h2 className="iv-h2">What does every other system miss?</h2>
+            <p className="iv-lede">Five systems, one tradeoff each. The comparison is the brand argument.</p>
+            <ComparisonTable rows={COMPARISON} />
+            <h3 className="iv-h3">What we kept</h3>
+            <KeptGrid items={KEPT} />
+            <p className="iv-aside">
+              <b className="iv-aside__label">What we changed.</b>
+              A 5-phase interview compiles your purpose, identity and workflow into the lean files.
+              Every harness loads them through its own convention file. Capture is one turn, not a multi-step workflow.
+            </p>
+          </section>
+
+          {/* ============== Walkthrough — skeleton ============== */}
+          <section className="iv-section">
+            {t.showSectionMarkers ? <SectionLabel number="20" label="Walkthrough" /> : null}
+            <h2 className="iv-h2">First the skeleton, then the conversation.</h2>
+            <p className="iv-lede">Numbered prefixes. One canonical place per idea. Cross-linked, harness-agnostic.</p>
+            <PositionGrid cells={PREFIXES} />
+          </section>
+
+          {/* ============== Walkthrough — interview ============== */}
+          <section className="iv-section">
+            {t.showSectionMarkers ? <SectionLabel number="25" label="The interview" /> : null}
+            <h2 className="iv-h2">Then: the interview.</h2>
+            <p className="iv-lede">Five phases. Real questions. Each one compiles into a single file your harness loads.</p>
+            <InterviewTimeline phases={PHASES} />
+          </section>
+
+          {/* ============== Templates ============== */}
+          <section className="iv-section">
+            {t.showSectionMarkers ? <SectionLabel number="30" label="Templates" /> : null}
+            <h2 className="iv-h2">Or start from a shape that fits.</h2>
+            <p className="iv-lede">
+              Phase 4 of the interview offers six presets plus Custom.
+              Each preset names your <code>20-</code> and <code>30-</code> domains.
+              Hover a preset to see the vault tree change.
+            </p>
+            <TemplateGallery templates={TEMPLATES} />
+          </section>
+
+          {/* ============== Harnesses ============== */}
+          <section className="iv-section">
+            {t.showSectionMarkers ? <SectionLabel number="40" label="Any harness" /> : null}
+            <h2 className="iv-h2">Same command. Any harness.</h2>
+            <p className="iv-lede">
+              Once installed, open whichever LLM tool you already use and invoke the build skill.
+              It loads through the convention file your harness already reads.
+            </p>
+            <HarnessSnippets harnesses={HARNESSES} />
+          </section>
+
+          {/* ============== Read further ============== */}
+          <section className="iv-section">
+            {t.showSectionMarkers ? <SectionLabel number="99" label="Read further" /> : null}
+            <h2 className="iv-h2">Read further.</h2>
+            <p className="iv-lede">Background reading on the choices behind ideaverse-os.</p>
+            <div className="iv-concepts">
+              {CONCEPTS.map((c) => <ConceptCard key={c.title} {...c} />)}
+            </div>
+          </section>
+
+          <SiteFooter />
+
+          <TweaksPanel title="Tweaks">
+            <TweakSection label="Hero" />
+            <TweakRadio  label="Badge position" value={t.badgePosition}
+                         options={["left", "right"]}
+                         onChange={(v) => setTweak('badgePosition', v)} />
+            <TweakRadio  label="Hero align" value={t.heroAlign}
+                         options={["left", "center"]}
+                         onChange={(v) => setTweak('heroAlign', v)} />
+            <TweakText   label="Badge text" value={t.badgeText}
+                         onChange={(v) => setTweak('badgeText', v)} />
+            <TweakSection label="System" />
+            <TweakRadio  label="Lilac" value={t.wineIntensity}
+                         options={["muted", "default", "deep"]}
+                         onChange={(v) => setTweak('wineIntensity', v)} />
+            <TweakToggle label="Section markers" value={t.showSectionMarkers}
+                         onChange={(v) => setTweak('showSectionMarkers', v)} />
+          </TweaksPanel>
+        </main>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
