@@ -16,7 +16,7 @@ npx ideaverse-os init ~/my-vault
 
 | Step | Command | What you get |
 |---|---|---|
-| Init | `npx ideaverse-os init <path>` | A numbered folder skeleton (`00-agentic-OS/`, `10-cortex/`, `20-/30-` user domains, `40-raw/`, `50-research-library/`, `60-skills/`, `70-daily/`, `80-visualization/`, `99-archive/`), a 6-file `auto_inject` identity layer, and router files for every major harness (`CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `.cursorrules`, `AIDER_CONVENTIONS.md`). |
+| Init | `npx ideaverse-os init <path>` | A numbered folder skeleton (`00-agentic-OS/`, `10-cortex/`, `20-/30-` user domains, `40-raw/`, `50-research-library/`, `60-skills/`, `70-daily/`, `80-visualization/`, `99-archive/`), a 6-file `auto_inject` identity layer, and router files for every major harness (`CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `.cursorrules`). |
 | Build | `/ideaverse-os build` (in your harness) | A 5-phase LLM-driven interview that compiles your compass, identity, workflow, domains, and optional layers into the lean files. Lock-file flow on every phase so you review before any mutation. |
 | Capture | `/ideaverse-capture <input>` | Paste a YouTube URL, drop an Obsidian web clip, paste a plain URL, or write "I learned X today." Routes to the right handler, ingests, refreshes your cortex articles, and cross-links automatically. |
 | Lint | `/cortex-lint [topic]` | Read-only audit of `10-cortex/` for stale `verified_at`, missing TL;DR, untyped sources, and triggered staleness signals. Diagnoses; doesn't mutate. |
@@ -38,7 +38,7 @@ Existing knowledge systems force a tradeoff. ideaverse-os keeps what each got ri
 
 ## Install
 
-Requires Node 20+ and a harness of your choice (Claude Code, Cursor, Aider, Codex, Gemini CLI).
+Requires Node 20+ and a harness of your choice (Claude Code, Cursor, Codex CLI, Gemini CLI).
 
 ```bash
 # Bootstrap a new vault

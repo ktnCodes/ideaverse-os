@@ -53,7 +53,6 @@ export const ROUTER_FILES = [
   "GEMINI.md",
   "AGENTS.md",
   ".cursorrules",
-  "AIDER_CONVENTIONS.md",
 ] as const;
 
 export type FileWrite = {
@@ -87,7 +86,7 @@ export function planScaffold(target: string): ScaffoldPlan {
   //   2. .claude/skills/<skill>/      -- Claude Code's project-local skill discovery.
   //                                      Enables the `/<skill>` slash command when
   //                                      Claude Code is run from this vault directory.
-  //                                      Has no effect on Cursor/Aider/Codex/Gemini
+  //                                      Has no effect on Cursor/Codex/Gemini
   //                                      (they ignore .claude/).
   // Both copies are byte-identical. Two locations, one source of truth.
   const SKILL_TARGET_BASES = ["60-skills", ".claude/skills"] as const;

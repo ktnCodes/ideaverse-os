@@ -16,7 +16,7 @@ Sections in `user.md.tmpl`:
 
 ### Section 1 - Harnesses
 
-1. *"Which LLM harnesses do you use? (Claude Code, Cursor, Aider, Codex CLI, Gemini CLI, ChatGPT web, Claude.ai web, Copilot CLI, other.) For each, when do you reach for it?"*
+1. *"Which LLM harnesses do you use? (Claude Code, Cursor, Codex CLI, Gemini CLI, ChatGPT web, Claude.ai web, Copilot CLI, other.) For each, when do you reach for it?"*
 2. *"Which is your **primary**? The one you spend the most time in?"*
 
 ### Section 2 - Tooling

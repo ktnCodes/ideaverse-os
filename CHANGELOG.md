@@ -10,6 +10,10 @@ All notable changes to `ideaverse-os` are documented here. The format follows [K
 - `templates/starter/work-personal/cortex-example.md`: sample article demonstrating the cortex frontmatter standard end-to-end. Users see the spec from day one.
 - Site page `/ideaverse-os/concepts/cortex-frontmatter`: full reference for the article standard, typed-edge prefixes, and lint rules.
 
+### Removed
+
+- Aider router file (`AIDER_CONVENTIONS.md`). Scope of supported harnesses is now Claude Code, Cursor, Codex CLI, Gemini CLI -- the four with strong adoption and well-documented convention-file mechanisms. Aider can still be used by passing `--read CLAUDE.md` (or another router file) at startup.
+
 ### Changed
 
 - `cortex-compile` article template now requires three new frontmatter fields:
@@ -24,7 +28,7 @@ All notable changes to `ideaverse-os` are documented here. The format follows [K
 ### Added
 
 - Initial public release. Bootstrap a position-addressed, harness-agnostic knowledge vault in one command.
-- `init` scaffolds the vault skeleton: `00-agentic-OS/` (lean 6 identity files) + numbered domain folders + router files for every major harness (CLAUDE.md, GEMINI.md, AGENTS.md, .cursorrules, AIDER_CONVENTIONS.md).
+- `init` scaffolds the vault skeleton: `00-agentic-OS/` (lean 6 identity files) + numbered domain folders + router files for every major harness (CLAUDE.md, GEMINI.md, AGENTS.md, .cursorrules).
 - Detect-and-prompt safety on every conflicting file (overwrite / skip / abort).
 - Six bundled skills installed to `60-skills/` and `.claude/skills/`:
   - `ideaverse-os` -- the build interview (compass / identity / workflow / domains / optional-layers phases) plus capture router.
