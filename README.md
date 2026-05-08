@@ -61,7 +61,7 @@ Every harness has its own convention file (`CLAUDE.md`, `.cursorrules`, `AGENTS.
 - `memory.md` -- session continuity
 - `runbook.md` -- the right command for the right intent
 
-Every harness loads them at session start through its native auto-injection mechanism. One identity, every tool. See [/ideaverse-os/concepts/harness-layer](https://ideaverse-os.ktncodes.com/ideaverse-os/concepts/harness-layer).
+Every harness loads them at session start through its native auto-injection mechanism. One identity, every tool. See [/ideaverse-os/concepts/harness-layer](https://ktncodes.com/ideaverse-os/concepts/harness-layer).
 
 ## Cortex articles
 
@@ -81,7 +81,7 @@ staleness_signal: "one-line condition that means this is stale"
 ---
 ```
 
-Sources use 5 typed-edge prefixes (`supports::`, `contradicts::`, `extends::`, `mentions::`, `inspired-by::`) so the relationship between source and claim is explicit. See [/ideaverse-os/concepts/cortex-frontmatter](https://ideaverse-os.ktncodes.com/ideaverse-os/concepts/cortex-frontmatter).
+Sources use 5 typed-edge prefixes (`supports::`, `contradicts::`, `extends::`, `mentions::`, `inspired-by::`) so the relationship between source and claim is explicit. See [/ideaverse-os/concepts/cortex-frontmatter](https://ktncodes.com/ideaverse-os/concepts/cortex-frontmatter).
 
 ## Optional layers (Phase 5)
 
@@ -91,7 +91,7 @@ Three opt-ins, each independent. Skip any subset.
 - **GitHub backup** -- private repo, baseline commit. Any harness; requires `gh` authenticated.
 - **WSL paths** -- fills `platforms.wsl` block in `paths.json`. Windows + WSL only.
 
-See [/ideaverse-os/concepts/optional-layers](https://ideaverse-os.ktncodes.com/ideaverse-os/concepts/optional-layers).
+See [/ideaverse-os/concepts/optional-layers](https://ktncodes.com/ideaverse-os/concepts/optional-layers).
 
 ## Templates
 
@@ -106,7 +106,7 @@ Phase 4 of `build` offers six starter shapes plus Custom. Each names your `20-` 
 | `dayjob-sideproject` | Income job + the thing you're building on the side. |
 | `solo` | One operator, one venture. No domain split. |
 
-[Browse all six -->](https://ideaverse-os.ktncodes.com/ideaverse-os/templates)
+[Browse all six -->](https://ktncodes.com/ideaverse-os/templates)
 
 ## Architecture rules
 

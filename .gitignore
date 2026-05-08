@@ -39,4 +39,7 @@ __pycache__/
 # impeccable / playwright session artifacts
 /.playwright-mcp/
 /*.png
+/*.webp
+/*.jpg
+/*.jpeg
 
