@@ -8,7 +8,7 @@ Bootstrap a position-addressed, harness-agnostic knowledge vault in one command.
 npx ideaverse-os init ~/my-vault
 ```
 
-**Site:** [ideaverse-os.ktncodes.com](https://ideaverse-os.ktncodes.com)
+**Site:** [https://ktncodes.com/ideaverse-os](https://ktncodes.com/ideaverse-os)
 
 ---
 
